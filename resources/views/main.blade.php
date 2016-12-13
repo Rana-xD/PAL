@@ -36,7 +36,7 @@
 
         <div class="col-xs-12">
             <div class="login-header">
-                <h3>ログイン Hello</h3>
+                <h3>ログイン</h3>
             </div>
         </div>
 
