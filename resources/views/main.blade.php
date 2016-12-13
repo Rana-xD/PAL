@@ -5,9 +5,9 @@
     <meta charset='utf-8' />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/custom/css/custom.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/custom/js/core.js" ></script>
 
     <!--[if lt IE 9]>
     <script src="/custom/js/html5shiv.js" type="text/javascript"></script>
@@ -47,12 +47,16 @@
 
                     <div class="col-xs-12">
 
-                        <form name="loginForm" class="form-horizontal" role="form" action="/login" method="post" enctype="multipart/form-data">
+                        <form name="loginForm" class="form-horizontal" role="form" action="#" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group">
                                 <!-- <label class="control-label col-xs-2" for="id">ID</label> -->
                                 <div class="row">
                                     <div class="col-xs-12">
+                                        <div class="alert alert-danger fade in" id="error">
+
+                                          <p id="Error"></p>
+                                         </div>
                                         <input placeholder="Email ID" class="form-control no-radius" id="id" type="text" name="name" value="{{ old('name') }}">
                                         <!-- <div ng-show="loginForm.name.$touched && loginForm.name.$invalid && loginForm.name.$error.required"><small style="color: red; display: block; text-align: center;">Please enter a valid user</small></div> -->
                                     </div>
@@ -70,7 +74,7 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-xs-12 text-center" style="margin-bottom:15px;">
-                                        <input class="btn custom-btn-primary login-btn form-control sm-radius" style="width: 50%;text-align:center;margin:0 auto;" type="submit" value="ログイン">
+                                        <input id="submit" class="btn custom-btn-primary login-btn form-control sm-radius" style="width: 50%;text-align:center;margin:0 auto;" type="button" value="ログイン">
                                     </div>
                                 </div>
 
