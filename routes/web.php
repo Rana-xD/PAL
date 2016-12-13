@@ -14,4 +14,4 @@
 Route::get('/', function () {
     return view('main');
 });
-Route::get('login','login@login');
+Route::post('login','login@login');

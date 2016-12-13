@@ -11,9 +11,12 @@ class login extends Controller
 {
     public function login(Request $request)
     {
-        echo $request->name;
-        return Response::json(array('error' => $validator->getMessageBag()->toArray()));
-
+         $name = $request->name;
+         $password = $request->password;
+         if($name=="worker")
+         {
+             return view ('TimeManagementIndividual');
+         }
 
     }
 }

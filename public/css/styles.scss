@@ -1,0 +1,436 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+body{
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  background: #ecf0f1;
+  margin: 0;
+}
+
+.header{
+  position: relative;
+  width: 100%;
+  height: 70px;
+  background: #fff;
+  box-shadow: 0px 2px 12px 0px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+
+  &:after{
+    display: table;
+    content: "";
+    clear: both;
+  }
+
+  .logo{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 70px;
+    height: 70px;
+
+    h1{
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px;
+      background: #f1f1f1;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      color: #777;
+      line-height: 1;
+      font-size: 20px;
+      font-family: "Raleway", sans-serif;
+    }
+  }
+
+  .navbar{
+    position: relative;
+    float: left;
+    width: auto;
+    height: 70px;
+  }
+
+  .global_nav{
+    position: relative;
+    width: 100%;
+    height: 70px;
+
+    ul{
+      list-style-type: none;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    li{
+      display: inline-block;
+
+    }
+    a{
+      display: block;
+      line-height: 1;
+      text-decoration: none;
+      padding: 27px 12px;
+      font-size: 17px;
+      color: #555;
+    }
+  }
+}
+.container{
+  position: relative;
+  width: 100%;
+  padding: 0 15px;
+ 
+  
+  &:after{
+    display: table;
+    content: "";
+    clear: both;
+  }
+}
+
+.content{
+  position: relative;
+  width: 100%;
+  
+  &:after{
+    display: table;
+    content: "";
+    clear: both;
+  }
+  
+  .time-range{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px 0;
+    
+    &:after{
+      display: table;
+      content: "";
+      clear: both;
+    }
+  }
+  
+  .from,
+  .to,
+  .rest-hour{
+    position: relative;
+    width: 200px;
+    float: left;
+    box-sizing: border-box;
+    
+    &:after{
+      display: table;
+      content: "";
+      clear: both;
+    }
+
+
+
+    .heading{
+      position: relative;
+      float: left;
+      width: 100%;
+      padding: 10px 0;
+      box-sizing: border-box;
+      text-align: center;
+
+      h4{
+        font-family: "Raleway", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0;
+        color: #2a2e3e;
+        display: inline-block;
+
+        &:after{
+          display: block;
+          content: "";
+          width: 100%;
+          height: 1px;
+          background-color: #2a2e3e
+        }
+
+      }
+    }
+  }
+  
+  .to{
+    
+  }
+
+  .rest-hour{
+    margin-left: 50px;
+    .unit{
+      position: relative;
+      float: left;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      h1{
+        font-size: 18px;
+        font-weight: 400;
+        margin: 4px 0 0 0;
+      }
+    }
+  }
+  
+  .semicolon{
+    float: left;
+    width: 6%;
+    display: block;
+    h4{
+      font-size: 25px;
+      margin:0;
+      text-align: center;
+      display: block;
+    }
+  }
+
+  .hour,
+  .minute{
+    position: relative;
+    float: left;
+    width: 47%;
+    padding: 2px;
+    box-sizing: border-box;
+    background: #ecf0f1;
+
+    .increase,
+    .decrease{
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      color: #888;
+      padding: 5px 2px;
+      line-height: 1;
+      background: #ccc;
+      border: 1px solid #eee;
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+
+      &:hover{
+        background: rgba(#c4c1c1,0.5);
+      }
+    }
+
+    .increase{
+      border-radius:3px 3px 0 0;
+    }
+
+    .decrease{
+      border-radius: 0 0 3px 3px;
+    }
+
+
+  }
+    
+  .time-input{
+    position: relative;
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 10px 5px;
+    margin:1px 0;
+    font-size: 24px;
+    color: #555;
+    text-align: center;
+    box-sizing: border-box;
+    border-left: 1px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+
+  }
+
+  .tasks-range{
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+
+    &:after{
+      display: table;
+      content: "";
+      clear: both;
+    }
+
+    .time-bar{
+      position: relative;
+      width: 100%;
+      height: 3px;
+      background: #ccc;
+      margin-bottom: 10px;
+      float: left;
+      display: block;
+
+      &:after{
+        display: table;
+        content: "";
+        clear: both;
+      }
+
+      span{
+        position: relative;
+        float: left;
+        width: 4.16666667%;
+        background: #333;
+        height: 3px;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        box-sizing: border-box;
+
+        &:nth-child(1):before{
+          content: "09:00";
+        }
+
+        &:nth-child(2):before{
+          content: "10:00";
+        }
+
+        &:nth-child(3):before{
+          content: "11:00";
+        }
+
+        &:nth-child(4):before{
+          content: "12:00";
+        }
+
+        &:nth-child(5):before{
+          content: "13:00";
+        }
+
+        &:nth-child(6):before{
+          content: "14:00";
+        }
+
+        &:nth-child(7):before{
+          content: "15:00";
+        }
+
+        &:nth-child(8):before{
+          content: "16:00";
+        }
+
+        &:nth-child(9):before{
+          content: "17:00";
+        }
+
+        &:nth-child(10):before{
+          content: "18:00";
+        }
+
+        &:before{
+          position: absolute;
+          background: #333;
+          top: -26px;
+          left: -9px;
+          z-index: 1;
+          content: "";
+          font-size: 11px;
+          color: #fff;
+          display: block;
+          width: 34px;
+          box-sizing: border-box;
+          padding:2px 1px;
+          text-align: center;
+          line-height: 1;
+          height: 16px;
+          transform: rotate(-35deg);
+        }
+
+      }
+    }
+
+    .hours-range{
+      list-style-type: none;
+      display: block;
+      width: 100%;
+      float: left;
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+
+    .task-hour{
+      float: left;
+      width: 4.16666667%;
+      padding: 1px;
+      box-sizing: border-box;
+
+    }
+
+    .tasks-select{
+      /* -webkit-appearance: none;
+      -moz-appearance: none;
+      ms-appearance: none;
+      appearance: none; */
+      outline: none;
+      display: block;
+      position: relative;
+      width: 100%;
+      padding: 3px 0;
+      border: none;
+      box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+      font-family: "Raleway", sans-serif;
+      font-size: 13px;
+      background: #fff;
+      color: #666;
+
+
+    }
+
+    .tasks{
+      position: relative;
+
+      .task{
+        position: relative;
+
+       /*  &:before{
+          position:absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          content: "\f078";
+          z-index: 0;
+          font: normal normal normal 12px/1 FontAwesome;
+          color: #666;
+
+        } */
+
+      }
+    }
+
+  }
+
+  .divider{
+    position: relative;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+
+    h1{
+      font-size: 40px;
+      margin: 40px 0 0 0;
+    }
+  }
+  
+}

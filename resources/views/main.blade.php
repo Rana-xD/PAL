@@ -47,7 +47,7 @@
 
                     <div class="col-xs-12">
 
-                        <form name="loginForm" class="form-horizontal" role="form" action="#" method="post" enctype="multipart/form-data">
+                        <form name="loginForm" class="form-horizontal" role="form" action="login" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group">
                                 <!-- <label class="control-label col-xs-2" for="id">ID</label> -->
@@ -74,7 +74,7 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-xs-12 text-center" style="margin-bottom:15px;">
-                                        <input id="submit" class="btn custom-btn-primary login-btn form-control sm-radius" style="width: 50%;text-align:center;margin:0 auto;" type="button" value="ログイン">
+                                        <input  class="btn custom-btn-primary login-btn form-control sm-radius" style="width: 50%;text-align:center;margin:0 auto;" type="submit" value="ログイン">
                                     </div>
                                 </div>
 
