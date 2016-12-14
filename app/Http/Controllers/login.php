@@ -15,12 +15,16 @@ class login extends Controller
      'name' => 'required',
      'password' => 'required',
         ]);
-
          $name = $request->name;
          $password = $request->password;
-         if($name=="worker")
+        //  return $name;
+         if(($name=="worker") || ($name=="Worker"))
          {
              return view ('TimeManagementIndividual');
+         }
+         else if (($name=="manager") || ($name=="Manager"))
+         {
+             return view ('BudgetManagement');
          }
 
     }
