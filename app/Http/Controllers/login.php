@@ -11,6 +11,11 @@ class login extends Controller
 {
     public function login(Request $request)
     {
+      $this->validate($request, [
+     'name' => 'required',
+     'password' => 'required',
+        ]);
+
          $name = $request->name;
          $password = $request->password;
          if($name=="worker")
