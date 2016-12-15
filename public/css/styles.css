@@ -301,45 +301,86 @@ body {
 }
 
 .content .tasks-range .time-bar span:nth-child(1):before {
-  content: "09:00";
+  content: "06:00";
 }
 
 .content .tasks-range .time-bar span:nth-child(2):before {
-  content: "10:00";
+  content: "7:00";
 }
 
 .content .tasks-range .time-bar span:nth-child(3):before {
-  content: "11:00";
+  content: "8:00";
 }
 
 .content .tasks-range .time-bar span:nth-child(4):before {
-  content: "12:00";
+  content: "9:00";
 }
 
 .content .tasks-range .time-bar span:nth-child(5):before {
-  content: "13:00";
+  content: "10:00";
 }
 
 .content .tasks-range .time-bar span:nth-child(6):before {
-  content: "14:00";
+  content: "11:00";
 }
 
 .content .tasks-range .time-bar span:nth-child(7):before {
-  content: "15:00";
+  content: "12:00";
 }
 
 .content .tasks-range .time-bar span:nth-child(8):before {
-  content: "16:00";
+  content: "13:00";
 }
 
 .content .tasks-range .time-bar span:nth-child(9):before {
-  content: "17:00";
+  content: "14:00";
 }
 
 .content .tasks-range .time-bar span:nth-child(10):before {
+  content: "15:00";
+}
+.content .tasks-range .time-bar span:nth-child(11):before {
+  content: "16:00";
+}
+.content .tasks-range .time-bar span:nth-child(12):before {
+  content: "17:00";
+}
+.content .tasks-range .time-bar span:nth-child(13):before {
+  content: "18:00";
+}
+.content .tasks-range .time-bar span:nth-child(14):before {
   content: "19:00";
 }
-
+.content .tasks-range .time-bar span:nth-child(15):before {
+  content: "20:00";
+}
+.content .tasks-range .time-bar span:nth-child(16):before {
+  content: "21:00";
+}
+.content .tasks-range .time-bar span:nth-child(17):before {
+  content: "22:00";
+}
+.content .tasks-range .time-bar span:nth-child(18):before {
+  content: "23:00";
+}
+.content .tasks-range .time-bar span:nth-child(19):before {
+  content: "24:00";
+}
+.content .tasks-range .time-bar span:nth-child(20):before {
+  content: "25:00";
+}
+.content .tasks-range .time-bar span:nth-child(21):before {
+  content: "26:00";
+}
+.content .tasks-range .time-bar span:nth-child(22):before {
+  content: "27:00";
+}
+.content .tasks-range .time-bar span:nth-child(23):before {
+  content: "28:00";
+}
+.content .tasks-range .time-bar span:nth-child(24):before {
+  content: "29:00";
+}
 .content .tasks-range .time-bar span:before {
   position: absolute;
   background: #333;

@@ -16,7 +16,7 @@
                 PAL
             </h1>
         </div>
-        <div class="navbar">
+        {{-- <div class="navbar">
             <nav class="global_nav">
                 <ul>
                     <li><a href="">Time Management</a></li>
@@ -25,7 +25,7 @@
                     <li><a href="">Shift Table</a></li>
                 </ul>
             </nav>
-        </div>
+        </div> --}}
     </div>
 </div>
 <div class="container">
@@ -141,7 +141,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row task-container">
                     <div class="tasks-range">
 
                     	<div class="time-bar">
@@ -152,6 +152,20 @@
                     		<span></span>
                     		<span></span>
                     		<span></span>
+                    		<span></span>
+                    		<span></span>
+                    		<span></span>
+                            <span></span>
+                    		<span></span>
+                    		<span></span>
+                    		<span></span>
+                    		<span></span>
+                    		<span></span>
+                    		<span></span>
+                    		<span></span>
+                    		<span></span>
+                    		<span></span>
+                            <span></span>
                     		<span></span>
                     		<span></span>
                     		<span></span>
