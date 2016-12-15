@@ -58,6 +58,15 @@
   			padding-top: 40px;
       }
   	</style>
+    <script type="text/javascript">
+      $(function(){
+        var role = '{{ $role }}' ;
+        if (role=='manager')
+        {
+          $('#budget').hide();
+        }
+      });
+    </script>
   </head>
   <body>
     <div class="header">
@@ -72,7 +81,7 @@
   	            <nav class="global_nav">
   	                <ul>
   										<li><a href="">Time Management</a></li>
-  										<li><a href="budget">Budget Management</a></li>
+  										<li id="budget"><a href="budget">Budget Management</a></li>
   										<li><a href="kpi">L-KPI</a></li>
   										<li><a href="work">Shift Table</a></li>
   	                </ul>
@@ -80,7 +89,7 @@
   	        </div>
   	    </div>
   	</div>
-    
+
     <div class="container">
       <div class="content" style="margin-bottom: 50px">
 
