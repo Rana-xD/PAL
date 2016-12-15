@@ -60,7 +60,7 @@
                 <ul>
                     <li><a href="">Time Management</a></li>
                     <li><a href="budget">Budget Management</a></li>
-                    <li><a href="">L-KPI</a></li>
+                    <li><a href="kpi">L-KPI</a></li>
                     <li><a href="work">Shift Table</a></li>
                 </ul>
             </nav>

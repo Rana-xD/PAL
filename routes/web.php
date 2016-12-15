@@ -21,3 +21,6 @@ Route::get('budget', function () {
 Route::get('work', function () {
     return view('WorkShift');
 });
+Route::get('kpi', function () {
+    return view('L-KPI');
+});
