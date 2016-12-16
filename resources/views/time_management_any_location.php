@@ -44,13 +44,8 @@
                        <div class="stuff-list">
                            <select name="stuff">
                                 <option value="" disabled selected></option>
-                               <option value="">Rana</option>
-                               <option value="">Vinei</option>
-                               <option value="">Kimheng</option>
-                               <option value="">Sreynet</option>
-                               <option value="">Visal</option>
-                               <option value="">Kimcheng</option>
-                               <option value="">Vanchhay</option>
+                                <option value="">Tokyo</option>
+                                <option value="">Yamanaka</option>
 
                            </select>
                        </div>
@@ -67,7 +62,7 @@
                         </tr>
                         <tr class="record">
                             <td class="stuff-no"></td>
-                            <td class="stuff-name">Rana</td>
+                            <td class="stuff-name">Tokyo</td>
                             <td class="timein"></td>
                             <td class="timeout"></td>
                             <td class="timerest"></td>
@@ -76,7 +71,7 @@
 
                         <tr class="record">
                             <td class="stuff-no"></td>
-                            <td class="stuff-name">Sothea</td>
+                            <td class="stuff-name">Yamanaka</td>
                             <td class="timein"></td>
                             <td class="timeout"></td>
                             <td class="timerest"></td>
