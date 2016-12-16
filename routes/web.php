@@ -25,9 +25,18 @@ Route::get('work', function () {
 });
 
 Route::get('time_management', function () {
-    return view('time_management_any_location');
+    return view('LocationAdmin');
 });
 
 Route::get('kpi', function () {
     return view('L-KPI');
+});
+Route::get('admin', function () {
+    return view('time_management_any_location');
+});
+Route::get('kpi-1', function () {
+    return view('L-KPI-1');
+});
+Route::get('work-1', function () {
+    return view('work');
 });

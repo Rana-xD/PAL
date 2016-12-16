@@ -2,18 +2,11 @@
 <html>
 <head>
 	<title>Time management</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="/fonts/font-awesome.min.css">
 	<script src="/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"><\/script>')</script>
 	<script src="/js/script.js"></script>
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
 
@@ -27,10 +20,10 @@
         <div class="navbar">
             <nav class="global_nav">
                 <ul>
-                    <li><a href="admin">Time Management</a></li>
-                    <!-- <li><a href="budget">Budget Management</a></li> -->
-                    <li><a href="kpi-1">L-KPI</a></li>
-                    <li><a href="work-1">Shift Table</a></li>
+                    <li><a href="time_management">Time Management</a></li>
+                    <li><a href="budget">Budget Management</a></li>
+                    <li><a href="kpi">L-KPI</a></li>
+                    <li><a href="work">Shift Table</a></li>
                 </ul>
             </nav>
         </div>
@@ -51,9 +44,8 @@
                        <div class="stuff-list">
                            <select name="stuff">
                                 <option value="" disabled selected></option>
-                                <option value="">Tokyo</option>
-                                <option value="">Yamanaka</option>
-
+                               <option value="">Tokyo</option>
+                               <option value="">Yamanaka</option>
                            </select>
                        </div>
                     </div>
