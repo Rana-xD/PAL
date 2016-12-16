@@ -224,7 +224,7 @@ body{
     display: block;
     h4{
       font-size: 25px;
-      margin:0;
+      margin: 40px 0 0 0;
       text-align: center;
       display: block;
     }
@@ -747,6 +747,113 @@ table {
 
   }
 
-  
+}
+
+.btn-sumit {
+  position: relative;
+  float: right;
+  bottom: 0;
+  padding: 8px 15px;
+  background: rgba(39, 174, 96,1);
+  border: none;
+  outline: none;
+  color: #f1f1f1;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  outline: 4px solid transparent;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+  transition: outline 0.2s ease-out;
+  -webkit-transition: outline 0.2s ease-out;
+  -moz-transition: outline 0.2s ease-out;
+  cursor: pointer;
+
+  &:hover{
+    outline-color: rgba(39, 174, 96,0.2);
+  }
+
+}
+
+.submit-row{
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 0 0 0;
+}
+
+.submit-row:after{
+  display: table;
+  content: " ";
+  height: 1px;
+  clear: both;
+}
+
+.table-container{
+  position: relative;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 40px;
+}
+
+.fileupload{
+  float: left;
+}
+
+.uploadfile{
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.uploadfile + label{
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 10px;
+  color: #666;
+  background: #fff;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+  transition: all .25s ease-out;
+  -webkit-transition: all .25s ease-out;
+  -moz-transition: all .25s ease-out;
+}
+
+.uploadfile + label *{
+  pointer-events: none;
+}
+
+.uploadfile:focus + label,
+.uploadfile + label:hover{
+  background: #fffeee;
+  box-shadow: 0 1px 3px rgba(50,50,93,.11),0 0px 1px rgba(0,0,0,.08);
+}
+
+.uploadfile:focus + label{
+  outline: 2px solid rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(50,50,93,.11),0 1px 2px rgba(0,0,0,.08);
+}
+
+/* Notify */
+.notify{
+  position: absolute;
+  display: inline-block;
+  border-radius: 25px;
+  padding: 15px;
+  top: 70px;
+  font-family: "Raleway", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: center;
+  right: 50px;
+  z-index: 1005;
+
+  &.error{
+    background: rgba(231, 76, 60,0.5);
+    color: #fff;
+  }
 
 }

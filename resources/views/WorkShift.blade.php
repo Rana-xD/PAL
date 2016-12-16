@@ -2,11 +2,18 @@
 <html>
 <head>
 	<title>Work shift</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="/fonts/font-awesome.min.css">
 	<script src="/js/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"><\/script>')</script>
 	<script src="/js/script.js"></script>
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 	<style>
 		.sel-box {
 			-webkit-appearance: none;
@@ -1285,8 +1292,11 @@
 			<br>
 			<br>
 			<div>
-				Upload file:
-				<input type="file" name="">
+				<div class="fileupload">
+					<input id="file" class="uploadfile" type="file" name="files" data-multiple-caption="{count} files selected" multiple />
+					<label for="file">Choose file</label>
+				</div>
+				
 			</div>
 		</div>
 	</div>
