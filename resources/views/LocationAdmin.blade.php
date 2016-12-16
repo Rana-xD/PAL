@@ -20,10 +20,10 @@
         <div class="navbar">
             <nav class="global_nav">
                 <ul>
-                    <li><a href="admin">Time Management</a></li>
-                    <!-- <li><a href="budget">Budget Management</a></li> -->
-                    <li><a href="kpi-1">L-KPI</a></li>
-                    <li><a href="work-1">Shift Table</a></li>
+                    <li><a href="time_management">Time Management</a></li>
+                    <li><a href="budget">Budget Management</a></li>
+                    <li><a href="kpi">L-KPI</a></li>
+                    <li><a href="work">Shift Table</a></li>
                 </ul>
             </nav>
         </div>

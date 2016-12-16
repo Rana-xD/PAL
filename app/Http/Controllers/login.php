@@ -24,10 +24,10 @@ class login extends Controller
          }
          else if (($name=="manager") || ($name=="Manager"))
          {
-             return view ('time_management_any_location',['role' => 'manager']);
+             return view ('time_management_any_location');
          }
          else if (($name=="admin") || ($name=="Admin")) {
-             return view ('time_management_any_location',['role' => 'admin']);
+             return view ('LocationAdmin');
          }
          else {
              return redirect('/');
