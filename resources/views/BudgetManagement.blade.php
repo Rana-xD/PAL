@@ -3,9 +3,11 @@
 	<head>
 		<title>Budget management</title>
 		<link rel="stylesheet" type="text/css" href="/css/styles.css">
-		<link rel="stylesheet" type="text/css" href="/fonts/font-awesome.css">
-		<style type="text/css">
-
+		<link rel="stylesheet" type="text/css" href="/fonts/font-awesome.min.css">
+		<script src="/js/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"><\/script>')</script>
+		<script src="/js/script.js"></script>
+		<style>
 			table {
 				border-collapse: collapse;
 				width: 100%;
@@ -15,6 +17,8 @@
 				background-color: #f2f2f2;
 				color: #ffffff;
 				background: #27ae60;
+				padding: 8px 4px;
+				text-align: left;
 			}
 			tr:nth-child(odd) {
 				background: #e9e9e9;
@@ -28,7 +32,7 @@
 			tr:last-child {
 				font-weight: bold;
 			}
-			th, td {
+			td {
 				text-align: left;
 				padding: 4px;
 			}
@@ -58,9 +62,9 @@
         <div class="navbar">
             <nav class="global_nav">
                 <ul>
-                    <li><a href="">Time Management</a></li>
+                    <li><a href="/time_management">Time Management</a></li>
                     <li><a href="budget">Budget Management</a></li>
-                    <li><a href="">L-KPI</a></li>
+                    <li><a href="kpi">L-KPI</a></li>
                     <li><a href="work">Shift Table</a></li>
                 </ul>
             </nav>

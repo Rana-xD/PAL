@@ -14,10 +14,18 @@
 Route::get('/', function () {
     return view('main');
 });
+
 Route::post('login','login@login');
 Route::get('budget', function () {
     return view('BudgetManagement');
 });
+
 Route::get('work', function () {
     return view('WorkShift');
 });
+
+Route::get('time_management', function () {
+    return view('time_management_any_location');
+});
+
+

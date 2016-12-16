@@ -1,4 +1,23 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,500,600);
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #34495e;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #9aa4af;
+}
+
+body {
+  scrollbar-face-color: #34495e;
+  scrollbar-track-color: #9aa4af;
+}
+
 body {
   font-family: "Raleway", sans-serif;
   font-size: 16px;
@@ -92,6 +111,13 @@ body {
   display: table;
   content: "";
   clear: both;
+}
+
+.task-container {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: scroll;
 }
 
 .content {
@@ -263,8 +289,9 @@ body {
 
 .content .tasks-range {
   position: relative;
-  width: 100%;
+  width: auto;
   margin-top: 50px;
+  padding: 0px 30px 20px 30px;
 }
 
 .content .tasks-range:after {
@@ -274,13 +301,11 @@ body {
 }
 
 .content .tasks-range .time-bar {
-  position: relative;
-  width: 100%;
+  position: absolute;
+  width: 2100px;
   height: 3px;
+  top: -10px;
   background: #ccc;
-  margin-bottom: 10px;
-  float: left;
-  display: block;
 }
 
 .content .tasks-range .time-bar:after {
@@ -292,7 +317,7 @@ body {
 .content .tasks-range .time-bar span {
   position: relative;
   float: left;
-  width: 4.16666667%;
+  width: 70px;
   background: #333;
   height: 3px;
   border-left: 1px solid #ccc;
@@ -300,92 +325,31 @@ body {
   box-sizing: border-box;
 }
 
-.content .tasks-range .time-bar span:nth-child(1):before {
-  content: "06:00";
+.content .tasks-range .hours-range {
+  list-style-type: none;
+  display: block;
+  width: 2120px;
+  float: left;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  counter-reset: tasks-counter 5;
 }
 
-.content .tasks-range .time-bar span:nth-child(2):before {
-  content: "7:00";
+.content .tasks-range .task-hour {
+  position: relative;
+  float: left;
+  width: 70px;
+  padding: 1px;
+  box-sizing: border-box;
+  counter-increment: tasks-counter;
 }
 
-.content .tasks-range .time-bar span:nth-child(3):before {
-  content: "8:00";
-}
-
-.content .tasks-range .time-bar span:nth-child(4):before {
-  content: "9:00";
-}
-
-.content .tasks-range .time-bar span:nth-child(5):before {
-  content: "10:00";
-}
-
-.content .tasks-range .time-bar span:nth-child(6):before {
-  content: "11:00";
-}
-
-.content .tasks-range .time-bar span:nth-child(7):before {
-  content: "12:00";
-}
-
-.content .tasks-range .time-bar span:nth-child(8):before {
-  content: "13:00";
-}
-
-.content .tasks-range .time-bar span:nth-child(9):before {
-  content: "14:00";
-}
-
-.content .tasks-range .time-bar span:nth-child(10):before {
-  content: "15:00";
-}
-.content .tasks-range .time-bar span:nth-child(11):before {
-  content: "16:00";
-}
-.content .tasks-range .time-bar span:nth-child(12):before {
-  content: "17:00";
-}
-.content .tasks-range .time-bar span:nth-child(13):before {
-  content: "18:00";
-}
-.content .tasks-range .time-bar span:nth-child(14):before {
-  content: "19:00";
-}
-.content .tasks-range .time-bar span:nth-child(15):before {
-  content: "20:00";
-}
-.content .tasks-range .time-bar span:nth-child(16):before {
-  content: "21:00";
-}
-.content .tasks-range .time-bar span:nth-child(17):before {
-  content: "22:00";
-}
-.content .tasks-range .time-bar span:nth-child(18):before {
-  content: "23:00";
-}
-.content .tasks-range .time-bar span:nth-child(19):before {
-  content: "24:00";
-}
-.content .tasks-range .time-bar span:nth-child(20):before {
-  content: "25:00";
-}
-.content .tasks-range .time-bar span:nth-child(21):before {
-  content: "26:00";
-}
-.content .tasks-range .time-bar span:nth-child(22):before {
-  content: "27:00";
-}
-.content .tasks-range .time-bar span:nth-child(23):before {
-  content: "28:00";
-}
-.content .tasks-range .time-bar span:nth-child(24):before {
-  content: "29:00";
-}
-.content .tasks-range .time-bar span:before {
+.content .tasks-range .task-hour:before {
   position: absolute;
   background: #333;
-  top: -26px;
-  left: -9px;
+  top: -36px;
+  left: -7px;
   z-index: 1;
   content: "";
   font-size: 11px;
@@ -398,23 +362,27 @@ body {
   line-height: 1;
   height: 16px;
   transform: rotate(-35deg);
+  content: counter(tasks-counter) ":00";
 }
 
-.content .tasks-range .hours-range {
-  list-style-type: none;
+.content .tasks-range .task-hour:last-child:after {
+  position: absolute;
+  background: #333;
+  top: -36px;
+  right: -25px;
+  z-index: 1;
+  content: "";
+  font-size: 11px;
+  color: #fff;
   display: block;
-  width: 100%;
-  float: left;
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
-
-.content .tasks-range .task-hour {
-  float: left;
-  width: 4.16666667%;
-  padding: 1px;
+  width: 34px;
   box-sizing: border-box;
+  padding: 2px 1px;
+  text-align: center;
+  line-height: 1;
+  height: 16px;
+  transform: rotate(-35deg);
+  content: "36:00";
 }
 
 .content .tasks-range .tasks-select {
@@ -471,4 +439,284 @@ body {
 .content .divider h1 {
   font-size: 40px;
   margin: 40px 0 0 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #f6f6f6;
+}
+
+.setting-rate-box {
+  width: 100px;
+}
+
+.page-content {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.t_manag_any {
+  position: relative;
+  margin-top: 30px;
+}
+
+.t_manag_any:after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+.t_manag_any .report {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.t_manag_any .report:after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+.t_manag_any .left,
+.t_manag_any .right {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.t_manag_any .left:after,
+.t_manag_any .right:after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+.t_manag_any .left {
+  min-width: 550px;
+}
+
+.t_manag_any .left table {
+  counter-reset: stuff-number;
+  border-right: 2px solid #2c3e50;
+}
+
+.t_manag_any .left th {
+  color: #f1f1f1;
+  background: #34495e;
+  padding: 8px 2px;
+  font-weight: 500;
+  border-right: 1px solid #ccc;
+}
+
+.t_manag_any .left th:first-child {
+  width: 50px;
+}
+
+.t_manag_any .left th:last-child {
+  border-right: none;
+}
+
+.t_manag_any .left .record {
+  counter-increment: stuff-number;
+}
+
+.t_manag_any .left .record .stuff-no:before {
+  content: counter(stuff-number);
+}
+
+.t_manag_any .left tr:nth-child(odd) {
+  background: #e9e9e9;
+}
+
+.t_manag_any .left td {
+  min-height: 55px;
+  height: 55px;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 1px solid #e4e4e4;
+}
+
+.t_manag_any .right {
+  width: auto;
+  overflow-x: scroll;
+}
+
+.t_manag_any .right .report-table {
+  position: relative;
+  width: 6200px;
+}
+
+.t_manag_any .right table {
+  position: relative;
+  margin-top: 69px;
+}
+
+.t_manag_any .right table .heading {
+  counter-reset: hours-range 5;
+}
+
+.t_manag_any .right table .heading .time {
+  position: relative;
+  counter-increment: hours-range;
+}
+
+.t_manag_any .right table .heading .time:before {
+  position: absolute;
+  z-index: 1;
+  background: #34495e;
+  left: -15px;
+  top: 10px;
+  content: counter(hours-range) ":00";
+}
+
+.t_manag_any .right table .heading .time:nth-child(31):after {
+  content: "36:00";
+  display: block;
+  background: #34495e;
+  z-index: 1;
+  position: absolute;
+  top: 10px;
+  right: -15px;
+}
+
+.t_manag_any .right th {
+  position: relative;
+  width: 160px;
+  color: #f1f1f1;
+  background: #34495e;
+  padding: 8px 2px;
+  font-weight: 500;
+  border-right: 1px solid #ccc;
+}
+
+.t_manag_any .right th:last-child {
+  border-right: none;
+  width: 70px;
+  padding-left: 30px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.t_manag_any .right th:first-child {
+  width: 70px;
+}
+
+.t_manag_any .right tr:nth-child(odd) {
+  background: #e9e9e9;
+}
+
+.t_manag_any .right .record {
+  counter-reset: tasks-time 5;
+}
+
+.t_manag_any .right .tasks:before {
+  position: absolute;
+  counter-increment: tasks-time;
+  content: counter(tasks-time) ":00";
+  display: block;
+  left: -10px;
+  top: 10px;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.t_manag_any .right .tasks:last-child:after {
+  position: absolute;
+  content: "36:00";
+  display: block;
+  right: -12px;
+  top: 10px;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.t_manag_any .right td {
+  position: relative;
+  padding: 25px 2px 2px 2px;
+  border: 1px solid #e4e4e4;
+}
+
+.t_manag_any .right td .select {
+  position: relative;
+  float: left;
+  width: 25%;
+  box-sizing: border-box;
+}
+
+.t_manag_any .right td .select select {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.t_manag_any .right td select {
+  position: relative;
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #eee;
+  box-sizing: border-box;
+}
+
+.t_manag_any .report-header {
+  position: relative;
+  width: 100%;
+  background: #27ae60;
+  box-sizing: border-box;
+}
+
+.t_manag_any .report-header:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.t_manag_any .report-header .location,
+.t_manag_any .report-header .stuff-list {
+  float: left;
+  width: 50%;
+  padding: 15px;
+  box-sizing: border-box;
+  line-height: 1;
+  text-align: center;
+}
+
+.t_manag_any .report-header .location h3,
+.t_manag_any .report-header .stuff-list h3 {
+  color: #f1f1f1;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+  padding: 8px 4px;
+}
+
+.t_manag_any .report-header .location select,
+.t_manag_any .report-header .stuff-list select {
+  outline: none;
+  border: none;
+  padding: 8px 4px;
+  width: 200px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0.1);
+  color: #f1f1f1;
+}
+
+.t_manag_any .report-header .location select option,
+.t_manag_any .report-header .stuff-list select option {
+  padding: 15px;
+  outline: none !important;
+  border: none !important;
+  background: #34495e;
 }

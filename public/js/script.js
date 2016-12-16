@@ -10,30 +10,61 @@ if (!PAL.main) PAL.main = {};
 		var addMinuteBtn = $('.increaseMinute');
 		var minusHourBtn = $('.decreaseHour');
 		var minusMinuteBtn = $('.decreaseMinute');
-		console.log(addHourBtn);
 
 		$(addHourBtn).on('click', function(){
-			var instance = $(this).next('.time-input').val();
-			if(instance<24){
-				$(this).next('.time-input').val(parseInt(instance) + 1);
-			}else{
-				$(this).next('.time-input').val('24');
-			}
+			var instance = $(this).parents('.hour').find('.time-input');
+			var value = parseInt(instance.val());
 			
+			if(value < 24){
+				if(value>=10){
+					
+				}
+			}else{
+				instance.val(parseInt('24'));
+			}
 
 		});
 	}
 
 	func.increaseMinute = function(){
-
+		var addMinuteBtn = $('.increaseMinute');
+		$(addMinuteBtn).on('click',function(){
+			var instance = $(this).parents('.minute').find('.time-input');
+			var value = parseInt(instance.val());
+			if(value < 60){
+				instance.val(parseInt(value + 1));
+			}else{
+				instance.val(parseInt('60'));
+			}
+		});
 	}
 
 	func.decreaseHour = function(){
+		var minusHourBtn = $('.decreaseHour');
+		$(minusHourBtn).on('click', function(){
+			var instance = $(this).parents('.hour').find('.time-input');
+			var value = parseInt(instance.val());
 
+			if(value <= 10 && value >= 1){
+				instance.val('0' + parseInt(value - 1));
+			}else if(value > 10){
+				instance.val(parseInt(value - 1));
+			}
+		});
 	}
 
 	func.decreaseMinute = function(){
+		var minusMinuteBtn = $('.decreaseMinute');
+		$(minusMinuteBtn).on('click', function(){
+			var instance = $(this).parents('.minute').find('.time-input');
+			var value = parseInt(instance.val());
 
+			if(value <= 10 && value >= 1){
+				instance.val('0' + parseInt(value - 1));
+			}else if(value > 10){
+				instance.val(parseInt(value - 1));
+			}
+		});
 	}
 
 })();
@@ -41,5 +72,8 @@ if (!PAL.main) PAL.main = {};
 
 $(document).ready(function(){
 	PAL.main.increaseHour();
+	PAL.main.increaseMinute();
+	PAL.main.decreaseHour();
+	PAL.main.decreaseMinute();
 });
 

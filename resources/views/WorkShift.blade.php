@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-  <link rel="stylesheet" type="text/css" href="/css/styles.css">
-  <link rel="stylesheet" type="text/css" href="/fonts/font-awesome.css">
-	<style type="text/css">
+	<title>Work shift</title>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="/fonts/font-awesome.min.css">
+	<script src="/js/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"><\/script>')</script>
+	<script src="/js/script.js"></script>
+	<style>
 		.sel-box {
 			-webkit-appearance: none;
 			-moz-appearance: none;
@@ -22,12 +25,14 @@
 		}
 		th {
 				color: #ffffff;
-				background: #2980b9;
-				padding: 4px;
-		}
-		th, td {
+				background: #27ae60;
+				padding:8px 4px;
 				text-align: center;
-				border: 1px solid #cccccc;
+				border: 1px solid #c4c4c4;
+		}
+		td {
+				text-align: left;
+				border: 1px solid #c4c4c4;
 		}
 		.page-content{
 			position: relative;
@@ -52,9 +57,9 @@
 	        <div class="navbar">
 	            <nav class="global_nav">
 	                <ul>
-										<li><a href="">Time Management</a></li>
+										<li><a href="time_management">Time Management</a></li>
 										<li><a href="budget">Budget Management</a></li>
-										<li><a href="">L-KPI</a></li>
+										<li><a href="kpi">L-KPI</a></li>
 										<li><a href="work">Shift Table</a></li>
 	                </ul>
 	            </nav>
