@@ -28,4 +28,6 @@ Route::get('time_management', function () {
     return view('time_management_any_location');
 });
 
-
+Route::get('kpi', function () {
+    return view('L-KPI');
+});

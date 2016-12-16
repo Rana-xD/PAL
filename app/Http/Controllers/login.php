@@ -17,14 +17,20 @@ class login extends Controller
         ]);
          $name = $request->name;
          $password = $request->password;
-        //  return $name;
+
          if(($name=="worker") || ($name=="Worker"))
          {
              return view ('TimeManagementIndividual');
          }
          else if (($name=="manager") || ($name=="Manager"))
          {
-             return view ('BudgetManagement');
+             return view ('L-KPI',['role' => 'manager']);
+         }
+         else if (($name=="admin") || ($name=="Admin")) {
+             return view ('L-KPI',['role' => 'admin']);
+         }
+         else {
+             return redirect('/');
          }
 
     }
