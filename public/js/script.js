@@ -1,5 +1,5 @@
 var PAL;
-if (!PAL) PAL = {}; 
+if (!PAL) PAL = {};
 if (!PAL.main) PAL.main = {};
 (function(){
 
@@ -14,10 +14,10 @@ if (!PAL.main) PAL.main = {};
 		$(addHourBtn).on('click', function(){
 			var instance = $(this).parents('.hour').find('.time-input');
 			var value = parseInt(instance.val());
-			
+
 			if(value < 24){
 				if(value>=10){
-					
+
 				}
 			}else{
 				instance.val(parseInt('24'));
@@ -66,6 +66,7 @@ if (!PAL.main) PAL.main = {};
 			}
 		});
 	}
+	
 
 })();
 
@@ -76,4 +77,3 @@ $(document).ready(function(){
 	PAL.main.decreaseHour();
 	PAL.main.decreaseMinute();
 });
-

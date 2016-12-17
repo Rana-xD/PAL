@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Validator;
 use Response;
 use Illuminate\Support\Facades\Input;
+use View;
 
 class login extends Controller
 {
@@ -24,10 +25,14 @@ class login extends Controller
          }
          else if (($name=="manager") || ($name=="Manager"))
          {
+             session_start();
+             $_SESSION['role'] = 'manager';
              return view ('time_management_any_location');
          }
          else if (($name=="admin") || ($name=="Admin")) {
-             return view ('LocationAdmin');
+             session_start();
+             $_SESSION['role'] = 'admin';
+             return view ('time_management_any_location');
          }
          else {
              return redirect('/');

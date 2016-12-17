@@ -6,16 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="/fonts/font-awesome.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  	<script src="/js/script.js"></script>
+
+    <script src="/js/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"><\/script>')</script>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript">
+          $(function(){
+              var role = '<?php if(session_status()===PHP_SESSION_NONE){
+  	                              session_start(); echo $_SESSION['role'];
+  	                             }elseif (session_status()===PHP_SESSION_ACTIVE) {
+  	                               echo $_SESSION['role'];
+                                 } ?>';
+
+             if (role == 'manager')
+             {
+                 $('#budget').hide();
+             }
+          });
+      </script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="/css/styles.css">
+      <link rel="stylesheet" type="text/css" href="/fonts/font-awesome.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <style type="text/css">
 
   		.table {
@@ -72,7 +88,7 @@
   	            <nav class="global_nav">
   	                <ul>
   										<li><a href="time_management">Time Management</a></li>
-  										<li id="budget"><a href="budget">Budget Management</a></li>
+            					<li id="budget"><a href="budget">Budget Management</a></li>
   										<li><a href="kpi">L-KPI</a></li>
   										<li><a href="work">Shift Table</a></li>
   	                </ul>
