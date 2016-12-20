@@ -2,11 +2,30 @@
 <html>
 	<head>
 		<title>Budget management</title>
+<<<<<<< HEAD
+||||||| merged common ancestors
+		<link rel="stylesheet" type="text/css" href="/css/styles.css">
+		<link rel="stylesheet" type="text/css" href="/fonts/font-awesome.min.css">
+=======
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="/css/styles.css">
+		<link rel="stylesheet" type="text/css" href="/fonts/font-awesome.min.css">
+>>>>>>> ad5da83e9910c91c692147fd83c6ef8f38512d29
 		<script src="/js/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"><\/script>')</script>
 		<script src="/js/script.js"></script>
+<<<<<<< HEAD
 			<link rel="stylesheet" type="text/css" href="/css/styles.css">
 			<link rel="stylesheet" type="text/css" href="/fonts/font-awesome.min.css">
+||||||| merged common ancestors
+=======
+		<!--[if lt IE 9]>
+      	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+>>>>>>> ad5da83e9910c91c692147fd83c6ef8f38512d29
 		<style>
 			table {
 				border-collapse: collapse;

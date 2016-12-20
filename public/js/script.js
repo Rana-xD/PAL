@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var PAL;
 if (!PAL) PAL = {};
 if (!PAL.main) PAL.main = {};
@@ -19,61 +20,200 @@ if (!PAL.main) PAL.main = {};
 				if(value>=10){
 
 				}
-			}else{
-				instance.val(parseInt('24'));
-			}
+||||||| merged common ancestors
+var PAL;
+if (!PAL) PAL = {}; 
+if (!PAL.main) PAL.main = {};
+(function(){
 
-		});
-	}
+	var func = PAL.main;
 
-	func.increaseMinute = function(){
+	func.increaseHour = function(){
+		var addHourBtn = $('.increaseHour');
 		var addMinuteBtn = $('.increaseMinute');
-		$(addMinuteBtn).on('click',function(){
-			var instance = $(this).parents('.minute').find('.time-input');
-			var value = parseInt(instance.val());
-			if(value < 60){
-				instance.val(parseInt(value + 1));
-			}else{
-				instance.val(parseInt('60'));
-			}
-		});
-	}
-
-	func.decreaseHour = function(){
 		var minusHourBtn = $('.decreaseHour');
-		$(minusHourBtn).on('click', function(){
+		var minusMinuteBtn = $('.decreaseMinute');
+
+		$(addHourBtn).on('click', function(){
 			var instance = $(this).parents('.hour').find('.time-input');
 			var value = parseInt(instance.val());
+			
+			if(value < 24){
+				if(value>=10){
+					
+				}
+=======
 
-			if(value <= 10 && value >= 1){
-				instance.val('0' + parseInt(value - 1));
-			}else if(value > 10){
-				instance.val(parseInt(value - 1));
+$(function(){
+
+	var addHourBtn = $('.increaseHour');
+	var addMinuteBtn = $('.increaseMinute');
+	var minusHourBtn = $('.decreaseHour');
+	var minusMinuteBtn = $('.decreaseMinute');
+	var timeInput = $('.time-input');
+
+	$(addHourBtn).on('click', increaseHour);
+	$(addMinuteBtn).on('click', increaseMinute);
+	$(minusHourBtn).on('click', decreaseHour);
+	$(minusMinuteBtn).on('click', decreaseMinute);
+
+	$(timeInput).on('change', function(){
+
+	});
+
+	function increaseHour(){
+		
+		var instance = $(this).parents('.hour').find('.time-input');
+		var value = instance.val();
+		
+		if(!($.isNumeric(value)) || value.length != 2){
+			if(!($.isNumeric(value)) && value.length != 2){
+				notify('001');
+				return;
+			}else if(value.length != 2){
+				notify('002');
+				return;
+>>>>>>> ad5da83e9910c91c692147fd83c6ef8f38512d29
+			}else{
+				notify('003');
+				return;
 			}
-		});
+		}
+
+		value = parseInt(value);
+		if(value < 24 && value >=9 ){
+			instance.val(parseInt(value + 1));
+		}else if(value<9){
+			instance.val('0'+ parseInt(value + 1));
+		}else{
+			instance.val(parseInt('24'));
+		}
+		
 	}
 
-	func.decreaseMinute = function(){
-		var minusMinuteBtn = $('.decreaseMinute');
-		$(minusMinuteBtn).on('click', function(){
-			var instance = $(this).parents('.minute').find('.time-input');
-			var value = parseInt(instance.val());
+	function increaseMinute(){
+		
+		var instance = $(this).parents('.minute').find('.time-input');
+		var value = parseInt(instance.val());
 
-			if(value <= 10 && value >= 1){
-				instance.val('0' + parseInt(value - 1));
-			}else if(value > 10){
-				instance.val(parseInt(value - 1));
-			}
-		});
+		if(value < 60 && value >=9 ){
+			instance.val(parseInt(value + 1));
+		}else if(value<9){
+			instance.val('0'+ parseInt(value + 1));
+		}else{
+			instance.val(parseInt('60'));
+		}
+
+	}
+
+	function decreaseHour(){
+		
+		var instance = $(this).parents('.hour').find('.time-input');
+		var value = parseInt(instance.val());
+
+		if(value <= 10 && value >= 1){
+			instance.val('0' + parseInt(value - 1));
+		}else if(value > 10){
+			instance.val(parseInt(value - 1));
+		}
+		
+	}
+
+	function decreaseMinute(){
+		
+		var instance = $(this).parents('.minute').find('.time-input');
+		var value = parseInt(instance.val());
+
+		if(value <= 10 && value >= 1){
+			instance.val('0' + parseInt(value - 1));
+		}else if(value > 10){
+			instance.val(parseInt(value - 1));
+		}
+		
 	}
 	
 
-})();
+});
+
+var notify = function(code,delay=3000){
+	var ele = $('<span></span>');
+	ele.addClass('notify');
+	var text = "";
+	switch(code){
+		case '001':
+			text = "time must be numeric and max length 2 digit!";
+			ele.html(text);
+			ele.addClass('error');
+			$('body').append(ele);
+			$(ele).animate({'top':'+=30px','opacity':'+=0.2'},350, function(){
+				
+				$(this).animate({'opacity':'1'},delay,function(){
+					$(this).animate({'opacity':'-=0.2','top':'-=40px'},500,function(){
+						$(this).remove();
+					});
+				});
+						
+			});
+			break;
+		case '002':
+			text = "time length must be 2 digit!";
+			ele.html(text);
+			ele.addClass('error');
+			$('body').append(ele);
+			$(ele).animate({'top':'+=30px','opacity':'+=0.2'},350, function(){
+				
+				$(this).animate({'opacity':'1'},delay,function(){
+					$(this).animate({'opacity':'-=0.2','top':'-=40px'},500,function(){
+						$(this).remove();
+					});
+				});
+						
+			});
+			break;
+		case '003':
+			text = "time must be numeric!";
+			ele.html(text);
+			ele.addClass('error');
+			$('body').append(ele);
+			$(ele).animate({'top':'+=30px','opacity':'+=0.2'},350, function(){
+				
+				$(this).animate({'opacity':'1'},delay,function(){
+					$(this).animate({'opacity':'-=0.2','top':'-=40px'},500,function(){
+						$(this).remove();
+					});
+				});
+						
+			});
+			break;
+		default:
+			return;
+	}
+}
+
+$(function(){
+	var inputs = document.querySelectorAll( '.uploadfile' );
+	Array.prototype.forEach.call( inputs, function( input )
+	{
+	  var label  = $(input).next(),
+	    labelVal = $(label).html();
+
+	  $(input).on( 'change', function( e )
+	  {
+	    var fileName = '';
+	    if( this.files && this.files.length > 1 )
+	      fileName = ( $(this).attr('data-multiple-caption') || '' ).replace( '{count}', this.files.length );
+	    else
+	      fileName = e.target.value.split( '\\' ).pop();
+
+	    if(fileName)
+	      $(label).html(fileName);
+	    else
+	      $(label).html(labelVal);
+	  });
+	});
+});
 
 
 $(document).ready(function(){
-	PAL.main.increaseHour();
-	PAL.main.increaseMinute();
-	PAL.main.decreaseHour();
-	PAL.main.decreaseMinute();
+	
 });
