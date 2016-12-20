@@ -1,48 +1,3 @@
-<<<<<<< HEAD
-var PAL;
-if (!PAL) PAL = {};
-if (!PAL.main) PAL.main = {};
-(function(){
-
-	var func = PAL.main;
-
-	func.increaseHour = function(){
-		var addHourBtn = $('.increaseHour');
-		var addMinuteBtn = $('.increaseMinute');
-		var minusHourBtn = $('.decreaseHour');
-		var minusMinuteBtn = $('.decreaseMinute');
-
-		$(addHourBtn).on('click', function(){
-			var instance = $(this).parents('.hour').find('.time-input');
-			var value = parseInt(instance.val());
-
-			if(value < 24){
-				if(value>=10){
-
-				}
-||||||| merged common ancestors
-var PAL;
-if (!PAL) PAL = {}; 
-if (!PAL.main) PAL.main = {};
-(function(){
-
-	var func = PAL.main;
-
-	func.increaseHour = function(){
-		var addHourBtn = $('.increaseHour');
-		var addMinuteBtn = $('.increaseMinute');
-		var minusHourBtn = $('.decreaseHour');
-		var minusMinuteBtn = $('.decreaseMinute');
-
-		$(addHourBtn).on('click', function(){
-			var instance = $(this).parents('.hour').find('.time-input');
-			var value = parseInt(instance.val());
-			
-			if(value < 24){
-				if(value>=10){
-					
-				}
-=======
 
 $(function(){
 
@@ -73,11 +28,6 @@ $(function(){
 			}else if(value.length != 2){
 				notify('002');
 				return;
->>>>>>> ad5da83e9910c91c692147fd83c6ef8f38512d29
-			}else{
-				notify('003');
-				return;
-			}
 		}
 
 		value = parseInt(value);
