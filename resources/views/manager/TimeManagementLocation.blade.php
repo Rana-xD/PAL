@@ -6,20 +6,6 @@
 	<script src="/js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"><\/script>')</script>
 	<script src="/js/script.js"></script>
-    <script type="text/javascript">
-        $(function(){
-            var role = '<?php if(session_status()===PHP_SESSION_NONE){
-	                              session_start(); echo $_SESSION['role'];
-	                             }elseif (session_status()===PHP_SESSION_ACTIVE) {
-	                               echo $_SESSION['role'];
-                               } ?>';
-
-           if (role == 'manager')
-           {
-               $('#budget').hide();
-           }
-        });
-    </script> 
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="/fonts/font-awesome.min.css">
 </head>
@@ -36,8 +22,7 @@
             <nav class="global_nav">
                 <ul>
                     <li><a href="time_management">Time Management</a></li>
-					<li id="budget"><a href="budget">Budget Management</a></li>
-					<li><a href="kpi">L-KPI</a></li>
+                    <li><a href="kpi">L-KPI</a></li>
                     <li><a href="work">Shift Table</a></li>
                 </ul>
             </nav>
