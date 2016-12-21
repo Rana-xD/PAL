@@ -7,9 +7,11 @@ use Validator;
 use Response;
 use Illuminate\Support\Facades\Input;
 use View;
+use App\Http\Controllers\info;
 
 class login extends Controller
 {
+
     public function login(Request $request)
     {
       $this->validate($request, [
@@ -27,12 +29,12 @@ class login extends Controller
          {
              session_start();
              $_SESSION['role'] = 'manager';
-             return view ('time_management_any_location');
+             return view ('manager.TimeManagementLocation');
          }
          else if (($name=="admin") || ($name=="Admin")) {
              session_start();
              $_SESSION['role'] = 'admin';
-             return view ('time_management_any_location');
+             return view ('admin.TimeManagementLocation');
          }
          else {
              return redirect('/');

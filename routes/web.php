@@ -16,18 +16,89 @@ Route::get('/', function () {
 });
 
 Route::post('login','login@login');
+
 Route::get('budget', function () {
-    return view('BudgetManagement');
+  if(session_status()===PHP_SESSION_NONE){
+     session_start();
+    if($_SESSION['role']=='admin'){
+      return view ('admin.BudgetManagement');
+    }
+    else {
+
+    }
+     }
+  elseif (session_status()===PHP_SESSION_ACTIVE)
+  {
+    if($_SESSION['role']=='admin'){
+      return view ('admin.BudgetManagement');
+    }
+    else {
+
+    }
+  }
+
 });
 
 Route::get('work', function () {
-    return view('WorkShift');
+  if(session_status()===PHP_SESSION_NONE){
+     session_start();
+    if($_SESSION['role']=='admin'){
+      return view ('admin.WorkShift');
+    }
+    else {
+      return view ('manager.WorkShift');
+    }
+     }
+  elseif (session_status()===PHP_SESSION_ACTIVE)
+  {
+    if($_SESSION['role']=='admin'){
+      return view ('admin.WorkShift');
+    }
+    else {
+      return view ('manager.WorkShift');
+    }
+  }
 });
 
 Route::get('time_management', function () {
-    return view('time_management_any_location');
+  if(session_status()===PHP_SESSION_NONE){
+     session_start();
+    if($_SESSION['role']=='admin'){
+      return view ('admin.TimeManagementLocation');
+    }
+    else {
+      return view ('manager.TimeManagementLocation');
+    }
+     }
+  elseif (session_status()===PHP_SESSION_ACTIVE)
+  {
+    if($_SESSION['role']=='admin'){
+      return view ('admin.TimeManagementLocation');
+    }
+    else {
+      return view ('manager.TimeManagementLocation');
+    }
+  }
 });
 
+
 Route::get('kpi', function () {
-    return view('L-KPI');
+  if(session_status()===PHP_SESSION_NONE){
+     session_start();
+    if($_SESSION['role']=='admin'){
+      return view ('admin.L-KPI');
+    }
+    else {
+      return view ('manager.L-KPI');
+    }
+     }
+  elseif (session_status()===PHP_SESSION_ACTIVE)
+  {
+    if($_SESSION['role']=='admin'){
+      return view ('admin.L-KPI');
+    }
+    else {
+      return view ('manager.L-KPI');
+    }
+  }
 });

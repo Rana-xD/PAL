@@ -14,20 +14,6 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript">
-        $(function(){
-            var role = '<?php if(session_status()===PHP_SESSION_NONE){
-	                              session_start(); echo $_SESSION['role'];
-	                             }elseif (session_status()===PHP_SESSION_ACTIVE) {
-	                               echo $_SESSION['role'];
-                               } ?>';
-
-           if (role == 'manager')
-           {
-               $('#budget').hide();
-           }
-        });
-    </script>
 	<style>
 		.sel-box {
 			-webkit-appearance: none;
@@ -79,7 +65,6 @@
 	            <nav class="global_nav">
 	                <ul>
 										<li><a href="time_management">Time Management</a></li>
-										<li id="budget"><a href="budget">Budget Management</a></li>
 										<li><a href="kpi">L-KPI</a></li>
 										<li><a href="work">Shift Table</a></li>
 	                </ul>
@@ -1310,7 +1295,7 @@
 					<input id="file" class="uploadfile" type="file" name="files" data-multiple-caption="{count} files selected" multiple />
 					<label for="file">Choose file</label>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
