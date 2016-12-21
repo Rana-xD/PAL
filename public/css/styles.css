@@ -141,17 +141,28 @@ body {
   padding: 20px 0;
 }
 
+.content .time-range:before {
+  display: table;
+  content: "";
+}
+
 .content .time-range:after {
   display: table;
   content: "";
   clear: both;
 }
 
+.content .input-group {
+  position: relative;
+  width: 25%;
+  float: left;
+}
+
 .content .from,
 .content .to,
 .content .rest-hour {
   position: relative;
-  width: 200px;
+  width: 100%;
   float: left;
   box-sizing: border-box;
 }
@@ -306,6 +317,7 @@ body {
   height: 3px;
   top: -10px;
   background: #ccc;
+  counter-reset: tasks-counter 5;
 }
 
 .content .tasks-range .time-bar:after {
@@ -323,32 +335,33 @@ body {
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
   box-sizing: border-box;
-}
-
-.content .tasks-range .hours-range {
-  list-style-type: none;
-  display: block;
-  width: 2120px;
-  float: left;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  counter-reset: tasks-counter 5;
-}
-
-.content .tasks-range .task-hour {
-  position: relative;
-  float: left;
-  width: 70px;
-  padding: 1px;
-  box-sizing: border-box;
   counter-increment: tasks-counter;
 }
 
-.content .tasks-range .task-hour:before {
+.content .tasks-range .time-bar span:last-child:after {
   position: absolute;
   background: #333;
-  top: -36px;
+  top: -25px;
+  right: -25px;
+  z-index: 1;
+  content: "";
+  font-size: 11px;
+  color: #fff;
+  display: block;
+  width: 34px;
+  box-sizing: border-box;
+  padding: 2px 1px;
+  text-align: center;
+  line-height: 1;
+  height: 16px;
+  transform: rotate(-35deg);
+  content: "36:00";
+}
+
+.content .tasks-range .time-bar span:before {
+  position: absolute;
+  background: #333;
+  top: -25px;
   left: -7px;
   z-index: 1;
   content: "";
@@ -365,24 +378,93 @@ body {
   content: counter(tasks-counter) ":00";
 }
 
-.content .tasks-range .task-hour:last-child:after {
-  position: absolute;
-  background: #333;
-  top: -36px;
-  right: -25px;
-  z-index: 1;
-  content: "";
-  font-size: 11px;
+.content .tasks-range .tasks-form {
+  min-width: 2120px;
+  min-height: 100px;
+  float: left;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.content .tasks-range .submit-div {
+  float: left;
+  position: relative;
+}
+
+.content .tasks-range .submit-div .submit {
+  border: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 10px 30px;
   color: #fff;
+  background: linear-gradient(to left, #2ECC71, #27ae60);
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 6px 10px rgba(50, 50, 93, 0.11), 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: all .25s ease-out;
+  -webkit-transition: all .25s ease-out;
+  -moz-transition: all .25s ease-out;
+}
+
+.content .tasks-range .submit-div .submit:hover {
+  background: linear-gradient(to left, #2aCd71, #24af60);
+  box-shadow: 0 1px 3px rgba(50, 50, 93, 0.11), 0 0px 1px rgba(0, 0, 0, 0.08);
+}
+
+.content .tasks-range .hours-range {
+  list-style-type: none;
   display: block;
-  width: 34px;
+  width: auto;
+  min-height: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.content .tasks-range .task-hour {
+  position: relative;
+  float: left;
+  width: 70px;
+  padding: 1px;
   box-sizing: border-box;
-  padding: 2px 1px;
-  text-align: center;
-  line-height: 1;
-  height: 16px;
-  transform: rotate(-35deg);
-  content: "36:00";
+  /* &:before{
+        position: absolute;
+        background: #333;
+        top: -36px;
+        left: -7px;
+        z-index: 1;
+        content: "";
+        font-size: 11px;
+        color: #fff;
+        display: block;
+        width: 34px;
+        box-sizing: border-box;
+        padding:2px 1px;
+        text-align: center;
+        line-height: 1;
+        height: 16px;
+        transform: rotate(-35deg);
+        content: counter(tasks-counter)":00";
+      } */
+  /* &:last-child:after{
+        position: absolute;
+        background: #333;
+        top: -36px;
+        right: -25px;
+        z-index: 1;
+        content: "";
+        font-size: 11px;
+        color: #fff;
+        display: block;
+        width: 34px;
+        box-sizing: border-box;
+        padding:2px 1px;
+        text-align: center;
+        line-height: 1;
+        height: 16px;
+        transform: rotate(-35deg);
+        content: "36:00";
+      } */
 }
 
 .content .tasks-range .tasks-select {
@@ -826,4 +908,21 @@ table {
 .notify.error {
   background: rgba(231, 76, 60, 0.5);
   color: #fff;
+}
+
+/* Media screen query */
+@media screen and (max-width: 768px) {
+  .sm-hide {
+    display: none !important;
+  }
+  .content .time-range {
+    display: block;
+  }
+  .content .divider {
+    width: 4%;
+  }
+  .content .input-group {
+    margin-bottom: 25px;
+    width: 46%;
+  }
 }

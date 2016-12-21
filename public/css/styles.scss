@@ -146,18 +146,29 @@ body{
     box-sizing: border-box;
     padding: 20px 0;
     
+    &:before{
+      display: table;
+      content: "";
+    }
+
     &:after{
       display: table;
       content: "";
       clear: both;
     }
   }
+
+  .input-group{
+    position: relative;
+    width: 25%;
+    float: left;
+  }
   
   .from,
   .to,
   .rest-hour{
     position: relative;
-    width: 200px;
+    width: 100%;
     float: left;
     box-sizing: border-box;
     
@@ -304,6 +315,7 @@ body{
       height: 3px;
       top: -10px;
       background: #ccc;
+      counter-reset: tasks-counter 5;
 
       &:after{
         display: table;
@@ -320,19 +332,94 @@ body{
         border-left: 1px solid #ccc;
         border-right: 1px solid #ccc;
         box-sizing: border-box;
+        counter-increment: tasks-counter;
 
+        &:last-child:after{
+          position: absolute;
+          background: #333;
+          top: -25px;
+          right: -25px;
+          z-index: 1;
+          content: "";
+          font-size: 11px;
+          color: #fff;
+          display: block;
+          width: 34px;
+          box-sizing: border-box;
+          padding:2px 1px;
+          text-align: center;
+          line-height: 1;
+          height: 16px;
+          transform: rotate(-35deg);
+          content: "36:00";
+        }
+
+        &:before{
+          position: absolute;
+          background: #333;
+          top: -25px;
+          left: -7px;
+          z-index: 1;
+          content: "";
+          font-size: 11px;
+          color: #fff;
+          display: block;
+          width: 34px;
+          box-sizing: border-box;
+          padding:2px 1px;
+          text-align: center;
+          line-height: 1;
+          height: 16px;
+          transform: rotate(-35deg);
+          content: counter(tasks-counter)":00";
+        }
+
+      }
+    }
+
+    .tasks-form{
+      min-width: 2120px;
+      min-height: 100px;
+      float: left;
+      position: relative;
+      margin: 0;
+      padding: 0;
+
+    }
+
+    .submit-div{
+      float: left;
+      position: relative;
+
+      .submit{
+        border: none;
+        font-size: 1.1em;
+        font-weight: 600;
+        padding: 10px 30px;
+        color: #fff;
+        background: linear-gradient(to left,#2ECC71,#27ae60);
+        display: inline-block;
+        cursor: pointer;
+        box-shadow: 0 6px 10px rgba(50,50,93,.11),0 2px 5px rgba(0,0,0,.08);
+        transition: all .25s ease-out;
+        -webkit-transition: all .25s ease-out;
+        -moz-transition: all .25s ease-out;
+
+        &:hover{
+          background:linear-gradient(to left,#2aCd71,#24af60);
+          box-shadow: 0 1px 3px rgba(50,50,93,.11),0 0px 1px rgba(0,0,0,.08);
+        }
       }
     }
 
     .hours-range{
       list-style-type: none;
       display: block;
-      width: 2120px;
-      float: left;
-      position: relative;
+      width: auto;
+      min-height: 100px;
       margin: 0;
       padding: 0;
-      counter-reset: tasks-counter 5;
+      
     }
 
     .task-hour{
@@ -341,9 +428,9 @@ body{
       width: 70px;
       padding: 1px;
       box-sizing: border-box;
-      counter-increment: tasks-counter;
+      
 
-      &:before{
+      /* &:before{
         position: absolute;
         background: #333;
         top: -36px;
@@ -361,9 +448,9 @@ body{
         height: 16px;
         transform: rotate(-35deg);
         content: counter(tasks-counter)":00";
-      }
+      } */
 
-      &:last-child:after{
+      /* &:last-child:after{
         position: absolute;
         background: #333;
         top: -36px;
@@ -381,7 +468,7 @@ body{
         height: 16px;
         transform: rotate(-35deg);
         content: "36:00";
-      }
+      } */
 
     }
 
@@ -854,6 +941,31 @@ table {
   &.error{
     background: rgba(231, 76, 60,0.5);
     color: #fff;
+  }
+
+}
+
+
+/* Media screen query */
+@media screen and (max-width: 768px){
+  .sm-hide{
+    display: none !important;
+  }
+
+  .content{
+
+    .time-range{
+      display: block;
+    }
+
+    .divider{
+      width: 4%;
+    }
+
+    .input-group{
+      margin-bottom: 25px;
+      width: 46%;
+    }
   }
 
 }

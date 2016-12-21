@@ -1,94 +1,288 @@
 
 $(function(){
 
-	var addHourBtn = $('.increaseHour');
-	var addMinuteBtn = $('.increaseMinute');
-	var minusHourBtn = $('.decreaseHour');
-	var minusMinuteBtn = $('.decreaseMinute');
-	var timeInput = $('.time-input');
+	// DOM query
+	var addHourBtn = $('.increaseHour'),
+		addMinuteBtn = $('.increaseMinute'),
+		minusHourBtn = $('.decreaseHour'),
+		minusMinuteBtn = $('.decreaseMinute'),
+		timeInput = $('.time-input'),
+		fromHour = $('#from-hour').find('.time-input'),
+		toHour = $('#to-hour').find('.time-input');
 
+
+	// Bind onclick for add and minus button
 	$(addHourBtn).on('click', increaseHour);
 	$(addMinuteBtn).on('click', increaseMinute);
 	$(minusHourBtn).on('click', decreaseHour);
 	$(minusMinuteBtn).on('click', decreaseMinute);
 
-	$(timeInput).on('change', function(){
+	// Listen on input time change event
+	$(timeInput).on('change keyup', function(){
+
+		if(!isValidTimeRange()){
+			notify('006');
+			return;
+		}
+
+		var val = $(this).val();
+		if(!isNumisLength(val, val.length)){
+			notify('001');
+			return;
+		}
+		var mama = $(this).parent();
+
+		// If parent of input is hour
+		if($(mama).hasClass('hour')){
+			if(!isMinMax(parseInt(val), 6, 36)){
+				$(this).val('06');
+				notify('004');
+				return;
+			}else{
+				appendTask();
+				return;
+			}
+		}
+
+		// If parent input is minute
+		if($(mama).hasClass('minute')){
+			if(!isMinMax(val, 0, 59)){
+				$(this).val('00');
+				notify('005');
+				return;
+			}
+			else{
+				return;
+			}
+		}
 
 	});
 
+	// Check whether value between min and max
+	function isMinMax(val, min, max){
+		if(!(val >= min && val <= max)){
+			return false;
+		}
+
+		return true;
+	}
+
+	// Check whether value is number and exactly length
+	function isNumisLength(num,len){
+		var code = "";
+		if(!($.isNumeric(num)) || num.length != len){
+			if(!($.isNumeric(num)) && num.length != len){
+				code = '001';
+				return code;
+			}else if(num.length != len){
+				code = '002';
+				return code;
+			}else{
+				code = '003';
+				return code;
+			}
+		}else{
+			return true;
+		}
+	}
+
+	// Validate start and stop time
+	function isValidTimeRange(){
+		var to = parseInt(toHour.val()),
+			from = parseInt(fromHour.val());
+
+		if(from > to){
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+	// Increase hour input
 	function increaseHour(){
 		
 		var instance = $(this).parents('.hour').find('.time-input');
 		var value = instance.val();
-		
-		if(!($.isNumeric(value)) || value.length != 2){
-			if(!($.isNumeric(value)) && value.length != 2){
-				notify('001');
-				return;
-			}else if(value.length != 2){
-				notify('002');
-				return;
+
+		if(!isValidTimeRange()){
+			notify('006');
+			return;
+		}
+
+		var goodToGo = isNumisLength(value, value.length);
+		if(!goodToGo === 'true'){
+			notify(goodToGo);
+			return;
 		}
 
 		value = parseInt(value);
-		if(value < 24 && value >=9 ){
+		if(value < 36 && value >=9 ){
 			instance.val(parseInt(value + 1));
 		}else if(value<9){
 			instance.val('0'+ parseInt(value + 1));
 		}else{
-			instance.val(parseInt('24'));
+			instance.val(parseInt('36'));
 		}
+		appendTask();
 		
 	}
 
+	// Increase minute input
 	function increaseMinute(){
 		
 		var instance = $(this).parents('.minute').find('.time-input');
-		var value = parseInt(instance.val());
+		var value = instance.val();
 
-		if(value < 60 && value >=9 ){
+		// Validate input time
+		var goodToGo = isNumisLength(value, value.length);
+		if(!goodToGo === true){
+			notify(goodToGo);
+			return;
+		}
+
+		value = parseInt(value);
+		if(value < 59 && value >=9 ){
 			instance.val(parseInt(value + 1));
 		}else if(value<9){
 			instance.val('0'+ parseInt(value + 1));
 		}else{
-			instance.val(parseInt('60'));
+			instance.val(parseInt('59'));
 		}
 
 	}
 
+	// Decrease hour input
 	function decreaseHour(){
 		
 		var instance = $(this).parents('.hour').find('.time-input');
-		var value = parseInt(instance.val());
+		var value = instance.val();
 
-		if(value <= 10 && value >= 1){
+		if(!isValidTimeRange()){
+			notify('006');
+			return;
+		}
+
+		// Validate time input
+		var goodToGo = isNumisLength(value, value.length);
+		if(!goodToGo === true){
+			notify(goodToGo);
+			return;
+		}
+
+		value = parseInt(value);
+		if(value <= 10 && value >= 7){
 			instance.val('0' + parseInt(value - 1));
 		}else if(value > 10){
 			instance.val(parseInt(value - 1));
 		}
 		
+		appendTask();
+		offsetHour();
 	}
 
+	// Decrease minute input
 	function decreaseMinute(){
 		
 		var instance = $(this).parents('.minute').find('.time-input');
-		var value = parseInt(instance.val());
+		var value = instance.val();
 
+		// validate time input
+		var goodToGo = isNumisLength(value, value.length);
+		if(!goodToGo === true){
+			notify(goodToGo);
+			return;
+		}
+
+		value = parseInt(value);
 		if(value <= 10 && value >= 1){
 			instance.val('0' + parseInt(value - 1));
 		}else if(value > 10){
 			instance.val(parseInt(value - 1));
 		}
 		
+		
+	}
+
+	// Set offset hour range
+	function offsetHour(){
+		var startHour = parseInt(fromHour.val()),
+			hoursRange = $('.hours-range');
+			offset = startHour - 6;
+
+			$(hoursRange).find('.task-hour').slice(0,offest).css({'visibility':'hidden'});
 	}
 	
+	// Append task-hour to list
+	function appendTask(){
+		var startHour = parseInt(fromHour.val()),
+			stopHour = parseInt(toHour.val()),
+			tasksHour = stopHour - startHour,f
+			hoursRange = $('.hours-range'),
+			task_value = "my task";
+			hoursRange.empty();
+		for(i=0;i<tasksHour;i++){
+
+			$(hoursRange).append(
+				'<li class="task-hour">'+
+					'<div class="tasks">'+
+						'<div class="task">'+
+							'<select name="hour_'+(i+6)+'_1" class="tasks-select">'+
+								'<option></option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+							'</select>'+
+						'</div>'+
+						'<div class="task">'+
+							'<select name="hour_'+(i+6)+'_2" class="tasks-select">'+
+								'<option></option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+							'</select>'+
+						'</div>'+
+						'<div class="task">'+
+							'<select name="hour_'+(i+6)+'_3" class="tasks-select">'+
+								'<option></option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+							'</select>'+
+						'</div>'+
+						'<div class="task">'+
+							'<select name="hour_'+(i+6)+'_4" class="tasks-select">'+
+								'<option></option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+                                '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
+							'</select>'+
+						'</div>'+
+					'</div>'+	
+				'</li>'
+			);
+		}
+
+
+	}
 
 });
 
-var notify = function(code,delay=3000){
+// Notify 
+function notify(code, delay=3000){
 	var ele = $('<span></span>');
 	ele.addClass('notify');
 	var text = "";
+
+	// Show message base on code
+	// @param code: define with switch case code
 	switch(code){
 		case '001':
 			text = "time must be numeric and max length 2 digit!";
@@ -105,6 +299,7 @@ var notify = function(code,delay=3000){
 						
 			});
 			break;
+
 		case '002':
 			text = "time length must be 2 digit!";
 			ele.html(text);
@@ -120,6 +315,7 @@ var notify = function(code,delay=3000){
 						
 			});
 			break;
+
 		case '003':
 			text = "time must be numeric!";
 			ele.html(text);
@@ -135,11 +331,62 @@ var notify = function(code,delay=3000){
 						
 			});
 			break;
+
+		case '004':
+			text = "hour must be min 06 and max 36!";
+			ele.html(text);
+			ele.addClass('error');
+			$('body').append(ele);
+			$(ele).animate({'top':'+=30px','opacity':'+=0.2'},350, function(){
+				
+				$(this).animate({'opacity':'1'},delay,function(){
+					$(this).animate({'opacity':'-=0.2','top':'-=40px'},500,function(){
+						$(this).remove();
+					});
+				});
+						
+			});
+			break;
+
+		case '005':
+			text = "minute must be min 00 and max 59!";
+			ele.html(text);
+			ele.addClass('error');
+			$('body').append(ele);
+			$(ele).animate({'top':'+=30px','opacity':'+=0.2'},350, function(){
+				
+				$(this).animate({'opacity':'1'},delay,function(){
+					$(this).animate({'opacity':'-=0.2','top':'-=40px'},500,function(){
+						$(this).remove();
+					});
+				});
+						
+			});
+			break;
+
+		case '006':
+			text = "Stop hour must greater than start hour!";
+			ele.html(text);
+			ele.addClass('error');
+			$('body').append(ele);
+			$(ele).animate({'top':'+=30px','opacity':'+=0.2'},350, function(){
+				
+				$(this).animate({'opacity':'1'},delay,function(){
+					$(this).animate({'opacity':'-=0.2','top':'-=40px'},500,function(){
+						$(this).remove();
+					});
+				});
+						
+			});
+			break;
+
 		default:
 			return;
 	}
 }
 
+
+// File upload
 $(function(){
 	var inputs = document.querySelectorAll( '.uploadfile' );
 	Array.prototype.forEach.call( inputs, function( input )
@@ -162,6 +409,8 @@ $(function(){
 	  });
 	});
 });
+
+// 
 
 
 $(document).ready(function(){

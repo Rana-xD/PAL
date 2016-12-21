@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>L-KPI dashboard</title>
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="/fonts/font-awesome.css">
-    <script src="/js/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"><\/script>')</script>
-  	<script src="/js/script.js"></script>
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script type="text/javascript">
-          $(function(){
-              var role = '<?php if(session_status()===PHP_SESSION_NONE){
-  	                              session_start(); echo $_SESSION['role'];
-  	                             }elseif (session_status()===PHP_SESSION_ACTIVE) {
-  	                               echo $_SESSION['role'];
-                                 } ?>';
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L-KPI dashboard</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="/fonts/font-awesome.css">
+  <script src="/js/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"><\/script>')</script>
+	<script src="/js/script.js"></script>
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript">
+        $(function(){
+            var role = '<?php if(session_status()===PHP_SESSION_NONE){
+	                              session_start(); echo $_SESSION['role'];
+	                             }elseif (session_status()===PHP_SESSION_ACTIVE) {
+	                               echo $_SESSION['role'];
+                               } ?>';
 
-             if (role == 'manager')
-             {
-                 $('#budget').hide();
-             }
-          });
-      </script>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-      <link rel="stylesheet" type="text/css" href="/css/styles.css">
-      <link rel="stylesheet" type="text/css" href="/fonts/font-awesome.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+           if (role == 'manager')
+           {
+               $('#budget').hide();
+           }
+        });
+    </script>
     <style type="text/css">
 
   		.table {
@@ -109,7 +104,7 @@
 
           <div class="row">
               <div class="time-range">
-
+                <div class="input-group">
                   <div class="from">
                     <div class="heading">
                       <h4>
@@ -123,7 +118,7 @@
                           <input name="start-hour"
                                  type="text"
                                  class="time-input"
-                                 value="00">
+                                 value="06">
                           <span class="decrease decreaseHour">
                               <i class="fa fa-minus"></i>
                           </span>
@@ -146,13 +141,15 @@
                           </span>
                       </div>
                   </div>
+                </div>
 
-                  <div class="divider">
-                    <h1>
-                      ~
-                    </h1>
-                  </div>
+                <div class="divider">
+                  <h1>
+                    ~
+                  </h1>
+                </div>
 
+                <div class="input-group">
                   <div class="to">
                     <div class="heading">
                       <h4>
@@ -166,7 +163,7 @@
                           <input name="stop-hour"
                                  type="text"
                                  class="time-input"
-                                 value="00">
+                                 value="06">
                           <span class="decrease decreaseHour">
                               <i class="fa fa-minus"></i>
                           </span>
@@ -186,16 +183,17 @@
                               <i class="fa fa-minus"></i>
                           </span>
                       </div>
-
                   </div>
+                </div>
 
-                  <div class="divider">
-                    <h1>
-                      ~
-                    </h1>
-                  </div>
+                <div class="divider sm-hide">
+                  <h1>
+                    ~
+                  </h1>
+                </div>
 
-                  <div class="to">
+                <div class="input-group">
+                  <div class="from">
                     <div class="heading">
                       <h4>
                         Clock out time 3
@@ -208,7 +206,7 @@
                           <input name="stop-hour"
                                  type="text"
                                  class="time-input"
-                                 value="00">
+                                 value="06">
                           <span class="decrease decreaseHour">
                               <i class="fa fa-minus"></i>
                           </span>
@@ -228,15 +226,16 @@
                               <i class="fa fa-minus"></i>
                           </span>
                       </div>
-
                   </div>
+                </div>
 
-                  <div class="divider">
-                    <h1>
-                      ~
-                    </h1>
-                  </div>
+                <div class="divider">
+                  <h1>
+                    ~
+                  </h1>
+                </div>
 
+                <div class="input-group">
                   <div class="to">
                     <div class="heading">
                       <h4>
@@ -250,7 +249,7 @@
                           <input name="stop-hour"
                                  type="text"
                                  class="time-input"
-                                 value="00">
+                                 value="06">
                           <span class="decrease decreaseHour">
                               <i class="fa fa-minus"></i>
                           </span>
@@ -270,8 +269,8 @@
                               <i class="fa fa-minus"></i>
                           </span>
                       </div>
-
                   </div>
+                </div>
 
               </div>
           </div>
