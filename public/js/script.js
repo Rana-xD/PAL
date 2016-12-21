@@ -44,7 +44,7 @@ $(function(){
 			}
 		}
 
-		// If parent input is minute
+		// If parent is minute input
 		if($(mama).hasClass('minute')){
 			if(!isMinMax(val, 0, 59)){
 				$(this).val('00');

@@ -390,6 +390,7 @@ body {
 .content .tasks-range .submit-div {
   float: left;
   position: relative;
+  margin: 20px 0;
 }
 
 .content .tasks-range .submit-div .submit {
