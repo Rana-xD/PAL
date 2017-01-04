@@ -98,7 +98,7 @@ $(function(){
 
 		},200);
 
-	}, 500);
+	}, 700);
 
 	// Check whether value between min and max
 	function isMinMax(val, min, max){
