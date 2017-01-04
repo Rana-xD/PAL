@@ -22,7 +22,7 @@
             <nav class="global_nav">
                 <ul>
                     <li><a href="time_management">Time Management</a></li>
-                    <li id="budget"><a href="budget">Budget Management</a></li>
+                    <li><a href="budget">Budget Management</a></li>
                     <li><a href="kpi">L-KPI</a></li>
                     <li><a href="work">Shift Table</a></li>
                 </ul>
@@ -192,9 +192,7 @@
                                 <th class="time"></th>
                                 <th>Subtotal</th>
                             </tr>
-
-                            <?php for($i=0; $i<10; $i++){ ?>
-
+                            @for ($i=0; $i<10 ; $i++)
                             <tr class="record">
                                 <td class="status">
                                     <select name="">
@@ -202,9 +200,9 @@
                                         <option value="NG">NG</option>
                                     </select>
                                 </td>
-                                <?php for($j=0; $j<30; $j++){ ?>
+                                @for ($j=0; $j<30 ; $j++)
                                 <td class="tasks">
-                                    <?php for($k=0; $k<4; $k++){ ?>
+                                    @for ($k=0; $k<4 ; $k++)
                                     <div class="select">
                                         <select name="">
                                             <option disabled selected></option>
@@ -214,12 +212,12 @@
                                             <option value="">Task 4</option>
                                         </select>
                                     </div>
-                                    <?php } ?>
+                                    @endfor
                                 </td>
-                                <?php } ?>
+                                @endfor
                             </tr>
 
-                            <?php } ?>
+                            @endfor
 
                         </table>
                     </div>

@@ -58,7 +58,7 @@
 
   		td:last-child {
 
-  			text-align: right;
+  			text-align: center;
   		}
 
   	</style>
@@ -77,7 +77,7 @@
   	            <nav class="global_nav">
   	                <ul>
   										<li><a href="time_management">Time Management</a></li>
-                      <li id="budget"><a href="budget">Budget Management</a></li>
+                      <li><a href="budget">Budget Management</a></li>
                       <li><a href="kpi">L-KPI</a></li>
   										<li><a href="work">Shift Table</a></li>
   	                </ul>
@@ -264,103 +264,56 @@
       <div class="table-container">
 
         <table class="table table-sm">
-        	<tr>
-        		<th>No</th>
-        		<th>Category</th>
-        		<th>Quantity</th>
-        		<th>Sales</th>
-        	</tr>
-        	<tr>
-        		<td>1</td>
-        		<td>Category 1</td>
-        		<td><input type="text" name=""></td>
-        		<td>&yen;100</td>
-        	</tr>
-        	<tr>
-        		<td>2</td>
-        		<td>Category 2</td>
-        		<td><input type="text" name=""></td>
-        		<td>&yen;200</td>
-        	</tr>
-        	<tr>
-        		<td>3</td>
-        		<td>Category 3</td>
-        		<td><input type="text" name=""></td>
-        		<td>&yen;4,000</td>
-        	</tr>
-        	<tr>
-        		<td>N</td>
-        		<td>Category N</td>
-        		<td><input type="text" name=""></td>
-        		<td>&yen;100,000</td>
-        	</tr>
+          <tr>
+            <th>No</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Sales</th>
+          </tr>
+          @foreach ($categories as $category)
+            <tr>
+              <td>{{ ++$i }}</td>
+              <td>{{ $category->category_name }}</td>
+              <td><input type="text" name=""></td>
+              <td>&yen;100</td>
+            </tr>
+          @endforeach
+          </table>
+
+        <table class="table table-sm">
+          <tr>
+            <th>No</th>
+            <th>Accident</th>
+            <th>Quantity</th>
+            <th style="visibility: hidden"></th>
+          </tr>
+          @foreach ($accidents as $accident)
+            <tr>
+              <td>{{ $accident->id }}</td>
+              <td>{{ $accident->accident_type }}</td>
+              <td><input type="text" name=""></td>
+              <td style="border-left: none;"></td>
+            </tr>
+          @endforeach
+
         </table>
 
         <table class="table table-sm">
-        	<tr>
-        		<th>No</th>
-        		<th>Accident</th>
-        		<th>Quantity</th>
-        		<th style="visibility: hidden"></th>
-        	</tr>
-        	<tr>
-        		<td>1</td>
-        		<td><input type="text" name=""></td>
-        		<td><input type="text" name=""></td>
-        		<td style="border-left: none;"></td>
-        	</tr>
-        	<tr>
-        		<td>2</td>
-        		<td><input type="text" name=""></td>
-        		<td><input type="text" name=""></td>
-        		<td style="border-left: none;"></td>
-        	</tr>
-        	<tr>
-        		<td>3</td>
-        		<td><input type="text" name=""></td>
-        		<td><input type="text" name=""></td>
-        		<td style="border-left: none;"></td>
-        	</tr>
-        	<tr>
-        		<td>20</td>
-        		<td><input type="text" name=""></td>
-        		<td><input type="text" name=""></td>
-        		<td style="border-left: none;"></td>
-        	</tr>
-        </table>
-
-        <table class="table table-sm">
-        	<tr>
-        		<th>No</th>
-        		<th>Category</th>
-        		<th>Quantity</th>
-        		<th>Sales</th>
-        	</tr>
-        	<tr>
-        		<td>1</td>
-        		<td><input type="text" name=""></td>
-        		<td><input type="text" name=""></td>
-        		<td><input type="text" name=""></td>
-        	</tr>
-        	<tr>
-        		<td>2</td>
-        		<td><input type="text" name=""></td>
-        		<td><input type="text" name=""></td>
-        		<td><input type="text" name=""></td>
-        	</tr>
-        	<tr>
-        		<td>3</td>
-        		<td><input type="text" name=""></td>
-        		<td><input type="text" name=""></td>
-        		<td><input type="text" name=""></td>
-        	</tr>
-        	<tr>
-        		<td>4</td>
-        		<td><input type="text" name=""></td>
-        		<td><input type="text" name=""></td>
-        		<td><input type="text" name=""></td>
-        	</tr>
-        </table>
+          <tr>
+            <th>No</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Sales</th>
+          </tr>
+          @foreach ($categories as $category)
+            <tr>
+              <td>{{ ++$j }}</td>
+              <td>{{ $category->category_name }}</td>
+              <td><input type="text" name=""></td>
+              <td><input type="text" name=""></td>
+            </tr>
+          @endforeach
+          </table>
         <div class="submit-row">
           <div class="fileupload">
             <input id="filebtn" class="uploadfile" type="file" name="files" data-multiple-caption="{count} files selected" multiple />

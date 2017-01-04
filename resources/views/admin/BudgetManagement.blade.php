@@ -21,7 +21,7 @@
 				background: #f6f6f6;
 				width: 3000px;
 				overflow: auto;
-				
+
 			}
 
 			table.scroll tbody,
@@ -33,7 +33,7 @@
 				height: 100px;
 			    overflow-y: auto;
 			    overflow-x: auto;
-			}										
+			}
 
 			th {
 				background-color: #f2f2f2;
@@ -45,7 +45,7 @@
 			tr:nth-child(odd) {
 				background: #e9e9e9;
 			}
-			
+
 			tr:last-child {
 				font-weight: bold;
 			}
@@ -89,7 +89,7 @@
             <nav class="global_nav">
                 <ul>
                     <li><a href="/time_management">Time Management</a></li>
-										<li id="budget"><a href="budget">Budget Management</a></li>
+										<li><a href="budget">Budget Management</a></li>
 										<li><a href="kpi">L-KPI</a></li>
                     <li><a href="work">Shift Table</a></li>
                 </ul>
@@ -116,12 +116,12 @@
 						<option value="11">NOVEMBER</option>
 						<option value="12">DECEMBER</option>
 					</select>
-					
+
 					<label for="year">Year</label>
 					<select id="year" name="year">
 						<option value="" selected hidden></option>
 						@php
-							
+
 							$curYear = Date("Y");
 							for($i=1990; $i <= $curYear; $i++){
 								echo "<option value='$i'>$i</option>";
@@ -161,7 +161,7 @@
 									<th>Cost</th>
 									<th>Profit</th>
 									<th>Profit rate</th>
-								
+
 									<th>Sales</th>
 									<th>Cost</th>
 									<th>Profit</th>
@@ -391,7 +391,7 @@
 									<th>Cost</th>
 									<th>Profit</th>
 									<th>Profit rate</th>
-								
+
 									<th>Sales</th>
 									<th>Cost</th>
 									<th>Profit</th>
@@ -621,7 +621,7 @@
 									<th>Cost</th>
 									<th>Profit</th>
 									<th>Profit rate</th>
-								
+
 									<th>Sales</th>
 									<th>Cost</th>
 									<th>Profit</th>

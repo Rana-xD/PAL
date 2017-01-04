@@ -48,7 +48,7 @@
                     <div class="col-xs-12">
 
                         <form name="loginForm" class="form-horizontal" role="form" action="login" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            {{ csrf_field() }}
                             <div class="form-group">
                                 <!-- <label class="control-label col-xs-2" for="id">ID</label> -->
                                 <div class="row">

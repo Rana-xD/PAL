@@ -29,11 +29,13 @@
     </div>
 </div>
 <div class="container">
+	<form class="tasks-form" action="task" method="POST">
+        {{ csrf_field() }}
             <div class="content">
 
                 <div class="row">
                     <div class="time-range">
-                    
+
                         <div class="from">
                         	<div class="heading">
                         		<h4>
@@ -44,7 +46,7 @@
                                 <span class="increase increaseHour">
                                     <i class="fa fa-plus"></i>
                                 </span>
-                                <input name="start-hour"
+                                <input name="start_hour"
                                        type="text"
                                        class="time-input"
                                        value="06">
@@ -61,7 +63,7 @@
                                 <span class="increase increaseMinute">
                                     <i class="fa fa-plus"></i>
                                 </span>
-                                <input name="start-minute"
+                                <input name="start_minute"
                                        type="text"
                                        class="time-input"
                                        value="00">
@@ -87,7 +89,7 @@
                                 <span class="increase increaseHour">
                                     <i class="fa fa-plus"></i>
                                 </span>
-                                <input name="stop-hour"
+                                <input name="stop_hour"
                                        type="text"
                                        class="time-input"
                                        value="06">
@@ -102,7 +104,7 @@
                                 <span class="increase increaseMinute">
                                     <i class="fa fa-plus"></i>
                                 </span>
-                                <input name="stop-minute"
+                                <input name="stop_minute"
                                        type="text"
                                        class="time-input"
                                        value="00">
@@ -122,7 +124,7 @@
                         			<i class="fa fa-plus"></i>
                         		</span>
 
-                        		<input name="rest-minute"
+                        		<input name="rest_minute"
                         		       type="text"
                         		       value="00"
                         		       class="time-input">
@@ -177,18 +179,18 @@
                             <span></span>
                     	</div>
 
-                        <form class="tasks-form" action="" method="POST">
+
                             <ul class="hours-range">
-                               
+
                             </ul>
                             <div class="submit-div">
                                 <input type="submit" class="submit" value="Submit">
                             </div>
-                        </form>
+
                     </div>
                 </div>
-
-            </div>
+                </div>
+            </form>
         </div>
 
   </body>

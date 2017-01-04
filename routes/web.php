@@ -81,24 +81,26 @@ Route::get('time_management', function () {
   }
 });
 
-
-Route::get('kpi', function () {
+Route::get('budget',function(){
   if(session_status()===PHP_SESSION_NONE){
      session_start();
     if($_SESSION['role']=='admin'){
-      return view ('admin.L-KPI');
+      return view ('admin.BudgetManagement');
     }
     else {
-      return view ('manager.L-KPI');
+      return view ('manager.BudgetManagement');
     }
      }
   elseif (session_status()===PHP_SESSION_ACTIVE)
   {
     if($_SESSION['role']=='admin'){
-      return view ('admin.L-KPI');
+      return view ('admin.BudgetManagement');
     }
     else {
-      return view ('manager.L-KPI');
+      return view ('manager.BudgetManagement');
     }
   }
 });
+
+Route::get('kpi','System@kpi');
+Route::post('task','login@task');
