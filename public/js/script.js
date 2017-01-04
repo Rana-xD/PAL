@@ -1,4 +1,42 @@
 
+// Done typing plugin
+;(function($){
+    $.fn.extend({
+        donetyping: function(callback,timeout){
+            timeout = timeout || 1e3; // 1 second default timeout
+            var timeoutReference,
+                doneTyping = function(el){
+                    if (!timeoutReference) return;
+                    timeoutReference = null;
+                    callback.call(el);
+                };
+            return this.each(function(i,el){
+                var $el = $(el);
+                // Chrome Fix (Use keyup over keypress to detect backspace)
+                // thank you @palerdot
+                $el.is(':input') && $el.on('keyup keypress paste',function(e){
+                    // This catches the backspace button in chrome, but also prevents
+                    // the event from triggering too preemptively. Without this line,
+                    // using tab/shift+tab will make the focused element fire the callback.
+                    if (e.type=='keyup' && e.keyCode!=8) return;
+                    
+                    // Check if timeout has been set. If it has, "reset" the clock and
+                    // start over again.
+                    if (timeoutReference) clearTimeout(timeoutReference);
+                    timeoutReference = setTimeout(function(){
+                        // if we made it here, our timeout has elapsed. Fire the
+                        // callback
+                        doneTyping(el);
+                    }, timeout);
+                }).on('blur',function(){
+                    // If we can, fire the event since we're leaving the field
+                    doneTyping(el);
+                });
+            });
+        }
+    });
+})(jQuery);
+
 $(function(){
 
 	// DOM query
@@ -18,7 +56,7 @@ $(function(){
 	$(minusMinuteBtn).on('click', decreaseMinute);
 
 	// Listen on input time change event
-	$(timeInput).on('change keyup', function(){
+	$(timeInput).donetyping(function(){
 
 		if(!isValidTimeRange()){
 			notify('006');
@@ -32,31 +70,35 @@ $(function(){
 		}
 		var mama = $(this).parent();
 
-		// If parent of input is hour
-		if($(mama).hasClass('hour')){
-			if(!isMinMax(parseInt(val), 6, 36)){
-				$(this).val('06');
-				notify('004');
-				return;
-			}else{
-				appendTask();
-				return;
-			}
-		}
+		delay(function(){
 
-		// If parent is minute input
-		if($(mama).hasClass('minute')){
-			if(!isMinMax(val, 0, 59)){
-				$(this).val('00');
-				notify('005');
-				return;
+			// If parent of input is hour
+			if($(mama).hasClass('hour')){
+				if(!isMinMax(parseInt(val), 6, 36)){
+					$(this).val('06');
+					notify('004');
+					return;
+				}else{
+					appendTask();
+					return;
+				}
 			}
-			else{
-				return;
-			}
-		}
 
-	});
+			// If parent is minute input
+			if($(mama).hasClass('minute')){
+				if(!isMinMax(val, 0, 59)){
+					$(this).val('00');
+					notify('005');
+					return;
+				}
+				else{
+					return;
+				}
+			}
+
+		},200);
+
+	}, 500);
 
 	// Check whether value between min and max
 	function isMinMax(val, min, max){

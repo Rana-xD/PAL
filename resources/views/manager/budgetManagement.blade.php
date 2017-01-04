@@ -180,20 +180,20 @@
 								<tr>
 									<td>Location 1</td>
 									<td>
-										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
+										&yen;10,000,000
 									</td>
 									<td>
-										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
+										&yen; 14,000,000
 									</td>
 									<td>&yen;3,000,000</td>
 									<td>20%</td>
 									<td><input type="text" name="" class="setting-rate-box"> %</td>
 
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
 									</td>
 									<td>
 										&yen;3,000,000
@@ -219,10 +219,10 @@
 									</td>
 
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
 									</td>
 									<td>
 										&yen;3,000,000
@@ -238,20 +238,20 @@
 								<tr>
 									<td>Location 2</td>
 									<td>
+										&yen;10,000,000
+									</td>
+									<td>
+										&yen; 14,000,000
+									</td>
+									<td>&yen;3,000,000</td>
+									<td>20%</td>
+									<td><input type="text" name="" class="setting-rate-box"> %</td>
+
+									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
-									</td>
-									<td>&yen;500,000</td>
-									<td>50.00%</td>
-									<td><input type="text" name="" class="setting-rate-box"> %</td>
-
-									<td>
-										&yen;3,000,000
-									</td>
-									<td>
-										&yen;3,000,000
 									</td>
 									<td>
 										&yen;3,000,000
@@ -277,10 +277,10 @@
 									</td>
 
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
 									</td>
 									<td>
 										&yen;3,000,000
@@ -296,20 +296,20 @@
 								<tr>
 									<td>Location N</td>
 									<td>
+										&yen;10,000,000
+									</td>
+									<td>
+										&yen; 14,000,000
+									</td>
+									<td>&yen;3,000,000</td>
+									<td>20%</td>
+									<td><input type="text" name="" class="setting-rate-box"> %</td>
+
+									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
-									</td>
-									<td>&yen;1,000,000</td>
-									<td>6.67%</td>
-									<td><input type="text" name="" class="setting-rate-box"> %</td>
-
-									<td>
-										&yen;3,000,000
-									</td>
-									<td>
-										&yen;3,000,000
 									</td>
 									<td>
 										&yen;3,000,000
@@ -335,10 +335,10 @@
 									</td>
 
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
 									</td>
 									<td>
 										&yen;3,000,000
@@ -410,21 +410,21 @@
 								<tr>
 									<td>Location 1</td>
 									<td>
+										&yen;10,000,000
+									</td>
+									<td>
+										&yen; 14,000,000
+									</td>
+									<td>&yen;3,000,000</td>
+									<td>20%</td>
+									<td><input type="text" name="" class="setting-rate-box"> %</td>
+
+									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
 									</td>
-									<td>&yen;3,000,000</td>
-									<td></td>
-									<td><input type="text" name="" class="setting-rate-box"> %</td>
-
-									<td>
-										&yen;3,000,000
-									</td>
-									<td>
-										&yen;3,000,000
-									</td>
 									<td>
 										&yen;3,000,000
 									</td>
@@ -449,10 +449,10 @@
 									</td>
 
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
 									</td>
 									<td>
 										&yen;3,000,000
@@ -463,25 +463,24 @@
 									<td>
 										&yen;400,000,00
 									</td>
-
 								</tr>
 								<tr>
 									<td>Location 2</td>
 									<td>
+										&yen;10,000,000
+									</td>
+									<td>
+										&yen; 14,000,000
+									</td>
+									<td>&yen;3,000,000</td>
+									<td>20%</td>
+									<td><input type="text" name="" class="setting-rate-box"> %</td>
+
+									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
-									</td>
-									<td>&yen;500,000</td>
-									<td>50.00%</td>
-									<td><input type="text" name="" class="setting-rate-box"> %</td>
-
-									<td>
-										&yen;3,000,000
-									</td>
-									<td>
-										&yen;3,000,000
 									</td>
 									<td>
 										&yen;3,000,000
@@ -507,10 +506,10 @@
 									</td>
 
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
 									</td>
 									<td>
 										&yen;3,000,000
@@ -526,20 +525,20 @@
 								<tr>
 									<td>Location N</td>
 									<td>
+										&yen;10,000,000
+									</td>
+									<td>
+										&yen; 14,000,000
+									</td>
+									<td>&yen;3,000,000</td>
+									<td>20%</td>
+									<td><input type="text" name="" class="setting-rate-box"> %</td>
+
+									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
-									</td>
-									<td>&yen;1,000,000</td>
-									<td>6.67%</td>
-									<td><input type="text" name="" class="setting-rate-box"> %</td>
-
-									<td>
-										&yen;3,000,000
-									</td>
-									<td>
-										&yen;3,000,000
 									</td>
 									<td>
 										&yen;3,000,000
@@ -565,10 +564,10 @@
 									</td>
 
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
 									</td>
 									<td>
 										&yen;3,000,000
@@ -640,20 +639,20 @@
 								<tr>
 									<td>Location 1</td>
 									<td>
+										&yen;10,000,000
+									</td>
+									<td>
+										&yen; 14,000,000
+									</td>
+									<td>&yen;3,000,000</td>
+									<td>20%</td>
+									<td><input type="text" name="" class="setting-rate-box"> %</td>
+
+									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
-									</td>
-									<td>&yen;3,000,000</td>
-									<td></td>
-									<td><input type="text" name="" class="setting-rate-box"> %</td>
-
-									<td>
-										&yen;3,000,000
-									</td>
-									<td>
-										&yen;3,000,000
 									</td>
 									<td>
 										&yen;3,000,000
@@ -679,10 +678,10 @@
 									</td>
 
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
 									</td>
 									<td>
 										&yen;3,000,000
@@ -698,20 +697,20 @@
 								<tr>
 									<td>Location 2</td>
 									<td>
+										&yen;10,000,000
+									</td>
+									<td>
+										&yen; 14,000,000
+									</td>
+									<td>&yen;3,000,000</td>
+									<td>20%</td>
+									<td><input type="text" name="" class="setting-rate-box"> %</td>
+
+									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
-									</td>
-									<td>&yen;500,000</td>
-									<td>50.00%</td>
-									<td><input type="text" name="" class="setting-rate-box"> %</td>
-
-									<td>
-										&yen;3,000,000
-									</td>
-									<td>
-										&yen;3,000,000
 									</td>
 									<td>
 										&yen;3,000,000
@@ -737,10 +736,10 @@
 									</td>
 
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
 									</td>
 									<td>
 										&yen;3,000,000
@@ -756,20 +755,20 @@
 								<tr>
 									<td>Location N</td>
 									<td>
+										&yen;10,000,000
+									</td>
+									<td>
+										&yen; 14,000,000
+									</td>
+									<td>&yen;3,000,000</td>
+									<td>20%</td>
+									<td><input type="text" name="" class="setting-rate-box"> %</td>
+
+									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
 										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
-									</td>
-									<td>&yen;1,000,000</td>
-									<td>6.67%</td>
-									<td><input type="text" name="" class="setting-rate-box"> %</td>
-
-									<td>
-										&yen;3,000,000
-									</td>
-									<td>
-										&yen;3,000,000
 									</td>
 									<td>
 										&yen;3,000,000
@@ -795,10 +794,10 @@
 									</td>
 
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="10,000,000">
 									</td>
 									<td>
-										&yen;3,000,000
+										<input type="text" name="" class="cost-profit-input" placeholder="7,000,000">
 									</td>
 									<td>
 										&yen;3,000,000

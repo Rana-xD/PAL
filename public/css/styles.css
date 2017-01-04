@@ -530,6 +530,14 @@ table {
   background: #f6f6f6;
 }
 
+table input[type="text"] {
+  padding: 7px 12px;
+  border-radius: 4px;
+  box-shadow: none;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 .setting-rate-box {
   width: 100px;
 }
@@ -909,6 +917,36 @@ table {
 .notify.error {
   background: rgba(231, 76, 60, 0.5);
   color: #fff;
+}
+
+/* Budget Management @admin */
+.tables-content {
+  position: relative;
+  width: 100%;
+}
+
+.tables-content .indi-area {
+  margin-bottom: 70px;
+  width: 100%;
+  overflow: auto;
+}
+
+.tables-content .indi-area .area-heading h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.4em;
+  font-weight: 500;
+  color: #555;
+}
+
+.tables-content:after, .tables-content:before {
+  content: " ";
+  display: table;
+  position: relative;
+}
+
+.tables-content:after {
+  zoom: 1;
+  clear: both;
 }
 
 /* Media screen query */
