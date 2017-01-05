@@ -19,7 +19,7 @@
                     // the event from triggering too preemptively. Without this line,
                     // using tab/shift+tab will make the focused element fire the callback.
                     if (e.type=='keyup' && e.keyCode!=8) return;
-                    
+
                     // Check if timeout has been set. If it has, "reset" the clock and
                     // start over again.
                     if (timeoutReference) clearTimeout(timeoutReference);
@@ -98,7 +98,7 @@ $(function(){
 
 		},200);
 
-	}, 500);
+	}, 700);
 
 	// Check whether value between min and max
 	function isMinMax(val, min, max){
@@ -142,7 +142,7 @@ $(function(){
 
 	// Increase hour input
 	function increaseHour(){
-		
+
 		var instance = $(this).parents('.hour').find('.time-input');
 		var value = instance.val();
 
@@ -166,12 +166,12 @@ $(function(){
 			instance.val(parseInt('36'));
 		}
 		appendTask();
-		
+
 	}
 
 	// Increase minute input
 	function increaseMinute(){
-		
+
 		var instance = $(this).parents('.minute').find('.time-input');
 		var value = instance.val();
 
@@ -195,7 +195,7 @@ $(function(){
 
 	// Decrease hour input
 	function decreaseHour(){
-		
+
 		var instance = $(this).parents('.hour').find('.time-input');
 		var value = instance.val();
 
@@ -217,14 +217,14 @@ $(function(){
 		}else if(value > 10){
 			instance.val(parseInt(value - 1));
 		}
-		
+
 		appendTask();
 		offsetHour();
 	}
 
 	// Decrease minute input
 	function decreaseMinute(){
-		
+
 		var instance = $(this).parents('.minute').find('.time-input');
 		var value = instance.val();
 
@@ -241,8 +241,8 @@ $(function(){
 		}else if(value > 10){
 			instance.val(parseInt(value - 1));
 		}
-		
-		
+
+
 	}
 
 	// Set offset hour range
@@ -253,7 +253,7 @@ $(function(){
 
 			$(hoursRange).find('.task-hour').slice(0,offest).css({'visibility':'hidden'});
 	}
-	
+
 	// Append task-hour to list
 	function appendTask(){
 		var startHour = parseInt(fromHour.val()),
@@ -307,7 +307,7 @@ $(function(){
                                 '<option value="'+task_value+'">Task hour'+ (i+6)+'</option>'+
 							'</select>'+
 						'</div>'+
-					'</div>'+	
+					'</div>'+
 				'</li>'
 			);
 		}
@@ -317,7 +317,7 @@ $(function(){
 
 });
 
-// Notify 
+// Notify
 function notify(code, delay=3000){
 	var ele = $('<span></span>');
 	ele.addClass('notify');
@@ -332,13 +332,13 @@ function notify(code, delay=3000){
 			ele.addClass('error');
 			$('body').append(ele);
 			$(ele).animate({'top':'+=30px','opacity':'+=0.2'},350, function(){
-				
+
 				$(this).animate({'opacity':'1'},delay,function(){
 					$(this).animate({'opacity':'-=0.2','top':'-=40px'},500,function(){
 						$(this).remove();
 					});
 				});
-						
+
 			});
 			break;
 
@@ -348,13 +348,13 @@ function notify(code, delay=3000){
 			ele.addClass('error');
 			$('body').append(ele);
 			$(ele).animate({'top':'+=30px','opacity':'+=0.2'},350, function(){
-				
+
 				$(this).animate({'opacity':'1'},delay,function(){
 					$(this).animate({'opacity':'-=0.2','top':'-=40px'},500,function(){
 						$(this).remove();
 					});
 				});
-						
+
 			});
 			break;
 
@@ -364,13 +364,13 @@ function notify(code, delay=3000){
 			ele.addClass('error');
 			$('body').append(ele);
 			$(ele).animate({'top':'+=30px','opacity':'+=0.2'},350, function(){
-				
+
 				$(this).animate({'opacity':'1'},delay,function(){
 					$(this).animate({'opacity':'-=0.2','top':'-=40px'},500,function(){
 						$(this).remove();
 					});
 				});
-						
+
 			});
 			break;
 
@@ -380,13 +380,13 @@ function notify(code, delay=3000){
 			ele.addClass('error');
 			$('body').append(ele);
 			$(ele).animate({'top':'+=30px','opacity':'+=0.2'},350, function(){
-				
+
 				$(this).animate({'opacity':'1'},delay,function(){
 					$(this).animate({'opacity':'-=0.2','top':'-=40px'},500,function(){
 						$(this).remove();
 					});
 				});
-						
+
 			});
 			break;
 
@@ -396,13 +396,13 @@ function notify(code, delay=3000){
 			ele.addClass('error');
 			$('body').append(ele);
 			$(ele).animate({'top':'+=30px','opacity':'+=0.2'},350, function(){
-				
+
 				$(this).animate({'opacity':'1'},delay,function(){
 					$(this).animate({'opacity':'-=0.2','top':'-=40px'},500,function(){
 						$(this).remove();
 					});
 				});
-						
+
 			});
 			break;
 
@@ -412,13 +412,13 @@ function notify(code, delay=3000){
 			ele.addClass('error');
 			$('body').append(ele);
 			$(ele).animate({'top':'+=30px','opacity':'+=0.2'},350, function(){
-				
+
 				$(this).animate({'opacity':'1'},delay,function(){
 					$(this).animate({'opacity':'-=0.2','top':'-=40px'},500,function(){
 						$(this).remove();
 					});
 				});
-						
+
 			});
 			break;
 
@@ -452,9 +452,16 @@ $(function(){
 	});
 });
 
-// 
+//
 
 
 $(document).ready(function(){
-	
+  var inputs = $('.multi-field');
+  $(inputs).on('change', function(e) {
+
+    var value = $(this).val();
+    var price = $(this).attr('data-multiply-by');
+    $(this).parent().next().find('span').html('&yen;'+ (value * price));
+    $(this).parent().next().find('.total-uop').val(value * price);
+  });
 });

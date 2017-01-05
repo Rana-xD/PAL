@@ -146,7 +146,7 @@
 									<th style="background: transparent; padding-left: 30px;"></th>
 									<th style="background: #e74c3c; padding-left: 30px;" colspan="5">予算</th>
 									<th style="background: #2ecc71; padding-left: 30px;" colspan="4">予測</th>
-									<th style="background: #3498db; padding-left: 30px;" colspan="5">進捗</th>
+									<th style="background: #3498db; padding-left: 30px;" colspan="6">進捗</th>
 									<th style="background: #f1c40f; padding-left: 30px;" colspan="5">確定数値</th>
 								</tr>
 								<tr>
@@ -162,6 +162,7 @@
 									<th>Profit</th>
 									<th>Profit rate</th>
 
+									<th>Last Update</th>
 									<th>Sales</th>
 									<th>Cost</th>
 									<th>Profit</th>
@@ -202,6 +203,7 @@
 										15%
 									</td>
 
+									<td>12/01/2017</td>
 									<td>
 										&yen;3,000,000
 									</td>
@@ -260,6 +262,7 @@
 										15%
 									</td>
 
+									<td>12/01/2017</td>
 									<td>
 										&yen;3,000,000
 									</td>
@@ -318,6 +321,7 @@
 										15%
 									</td>
 
+									<td>12/01/2017</td>
 									<td>
 										&yen;3,000,000
 									</td>
@@ -392,6 +396,8 @@
 									<th>Profit</th>
 									<th>Profit rate</th>
 
+
+									<th>Last Update</th>
 									<th>Sales</th>
 									<th>Cost</th>
 									<th>Profit</th>
@@ -432,6 +438,7 @@
 										15%
 									</td>
 
+									<td>12/01/2017</td>
 									<td>
 										&yen;3,000,000
 									</td>
@@ -489,6 +496,7 @@
 										15%
 									</td>
 
+									<td>12/01/2017</td>
 									<td>
 										&yen;3,000,000
 									</td>
@@ -547,6 +555,7 @@
 										15%
 									</td>
 
+									<td>12/01/2017</td>
 									<td>
 										&yen;3,000,000
 									</td>
@@ -621,6 +630,8 @@
 									<th>Profit</th>
 									<th>Profit rate</th>
 
+
+									<th>Last Update</th>
 									<th>Sales</th>
 									<th>Cost</th>
 									<th>Profit</th>
@@ -661,6 +672,7 @@
 										15%
 									</td>
 
+									<td>12/01/2017</td>
 									<td>
 										&yen;3,000,000
 									</td>
@@ -719,6 +731,7 @@
 										15%
 									</td>
 
+									<td>12/01/2017</td>
 									<td>
 										&yen;3,000,000
 									</td>
@@ -777,6 +790,7 @@
 										15%
 									</td>
 
+									<td>12/01/2017</td>
 									<td>
 										&yen;3,000,000
 									</td>

@@ -14,7 +14,6 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
-
     <style type="text/css">
 
   		.table {
@@ -44,7 +43,7 @@
       }
 
   		td > input {
-  			width: 80%;
+  			width: 40%;
         padding: 4px;
         border: 1px solid rgba(0,0,0,0.1);
         font-family: "Raleway", sans-serif;
@@ -56,9 +55,10 @@
         outline: 2px solid rgba(46, 204, 113,0.2);
       }
 
-  		td:last-child {
+  		td:last-child,
+      td.text-center {
 
-  			text-align: center;
+  		text-align: center;
   		}
 
   	</style>
@@ -274,8 +274,11 @@
             <tr>
               <td>{{ ++$i }}</td>
               <td>{{ $category->category_name }}</td>
-              <td><input type="text" name=""></td>
-              <td>&yen;100</td>
+              <td class="text-center"><input data-multiply-by="{{ $category->UOP }}" type="text" id="{{ $i }}" class="multi-field"></td>
+              <td name="">
+                <span></span>
+                <input type="hidden" class="total-uop" name="total-uop-{{$i}}" value=""/>
+              </td>
             </tr>
           @endforeach
           </table>
@@ -291,7 +294,7 @@
             <tr>
               <td>{{ $accident->id }}</td>
               <td>{{ $accident->accident_type }}</td>
-              <td><input type="text" name=""></td>
+              <td class="text-center"><input type="text" name=""></td>
               <td style="border-left: none;"></td>
             </tr>
           @endforeach
@@ -309,7 +312,7 @@
             <tr>
               <td>{{ ++$j }}</td>
               <td>{{ $category->category_name }}</td>
-              <td><input type="text" name=""></td>
+              <td class="text-center"><input type="text" name=""></td>
               <td><input type="text" name=""></td>
             </tr>
           @endforeach

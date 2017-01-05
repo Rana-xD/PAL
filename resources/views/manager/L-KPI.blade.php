@@ -9,82 +9,82 @@
   <link rel="stylesheet" type="text/css" href="/fonts/font-awesome.css">
   <script src="/js/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"><\/script>')</script>
-  <script src="/js/script.js"></script>
+	<script src="/js/script.js"></script>
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
-
     <style type="text/css">
 
-      .table {
-        border-collapse: collapse;
-        table-layout: fixed;
-        width: 100%;
-        background: #f6f6f6;
-      }
-      tr:nth-child(odd) {
-          background: #e9e9e9;
-        }
-      th:first-child {
-        width: 40px;
-      }
-      th {
-        color: #ffffff;
-        background: #27ae60;
-        text-align: center;
+  		.table {
+  			border-collapse: collapse;
+  			table-layout: fixed;
+  			width: 100%;
+  			background: #f6f6f6;
+  		}
+  		tr:nth-child(odd) {
+  				background: #e9e9e9;
+  			}
+  		th:first-child {
+  			width: 40px;
+  		}
+  		th {
+  			color: #ffffff;
+  			background: #27ae60;
+  			text-align: center;
         padding: 7px 4px;
-      }
-      td:first-child {
-        text-align: center;
-      }
+  		}
+  		td:first-child {
+  			text-align: center;
+  		}
 
       td{
         padding: 4px;
       }
 
-      td > input {
-        width: 80%;
+  		td > input {
+  			width: 40%;
         padding: 4px;
         border: 1px solid rgba(0,0,0,0.1);
         font-family: "Raleway", sans-serif;
         font-size: 15px;
         border-radius: 3px;
-      }
+  		}
 
       td > input:focus{
         outline: 2px solid rgba(46, 204, 113,0.2);
       }
 
-      td:last-child {
+  		td:last-child,
+      td.text-center {
 
-        text-align: center;
-      }
+  		text-align: center;
+  		}
 
-    </style>
+  	</style>
 
   </head>
   <body>
     <div class="header">
-        <div class="container">
-            <div class="logo">
-                <h1>
-                    {{-- <img src="http://www.pal-style.co.jp/img/hdr-logo.png" alt=""> --}}
-                    PAL
-                </h1>
-            </div>
-            <div class="navbar">
-                <nav class="global_nav">
-                    <ul>
-                      <li><a href="time_management">Time Management</a></li>
+  	    <div class="container">
+  	        <div class="logo">
+  	            <h1>
+  	                {{-- <img src="http://www.pal-style.co.jp/img/hdr-logo.png" alt=""> --}}
+  	                PAL
+  	            </h1>
+  	        </div>
+  	        <div class="navbar">
+  	            <nav class="global_nav">
+  	                <ul>
+  										<li><a href="time_management">Time Management</a></li>
                       <li><a href="budget">Budget Management</a></li>
                       <li><a href="kpi">L-KPI</a></li>
-                      <li><a href="work">Shift Table</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
+  										<li><a href="work">Shift Table</a></li>
+  	                </ul>
+  	            </nav>
+  	        </div>
+  	    </div>
+  	</div>
 
     <div class="container">
       <div class="content" style="margin-bottom: 50px">
@@ -274,8 +274,11 @@
             <tr>
               <td>{{ ++$i }}</td>
               <td>{{ $category->category_name }}</td>
-              <td><input type="text" name=""></td>
-              <td>&yen;100</td>
+              <td class="text-center"><input data-multiply-by="{{ $category->UOP }}" type="text" id="{{ $i }}" class="multi-field"></td>
+              <td name="">
+                <span></span>
+                <input type="hidden" class="total-uop" name="total-uop-{{$i}}" value=""/>
+              </td>
             </tr>
           @endforeach
           </table>
@@ -291,7 +294,7 @@
             <tr>
               <td>{{ $accident->id }}</td>
               <td>{{ $accident->accident_type }}</td>
-              <td><input type="text" name=""></td>
+              <td class="text-center"><input type="text" name="accident-{{$accident->id}}"></td>
               <td style="border-left: none;"></td>
             </tr>
           @endforeach
@@ -309,8 +312,8 @@
             <tr>
               <td>{{ ++$j }}</td>
               <td>{{ $category->category_name }}</td>
+              <td class="text-center"><input type="text" name=""></td>
               <td><input type="text" name=""></td>
-              <td>&yen;100</td>
             </tr>
           @endforeach
           </table>
